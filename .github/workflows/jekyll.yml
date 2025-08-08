@@ -40,7 +40,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           bundle install
-          bundle exec jekyll build
+          bundle exec jekyll build --baseurl "${{ steps.page-setup.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 

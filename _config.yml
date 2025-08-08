@@ -23,11 +23,7 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title/
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+permalink: pretty
 
 # Collections
 collections:
