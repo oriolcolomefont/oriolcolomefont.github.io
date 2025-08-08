@@ -66,6 +66,7 @@ exclude:
 
 # Include files
 include:
+  - _pages
   - _posts
   - assets
   - components
