@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         'hero': 'hero-container',
         'about': 'about-container',
         'contact': 'contact-container',
-        'footer': 'footer-container'
+        'footer': 'footer-container',
+        'courses-section': 'courses-container'
     });
 
     // Load dynamic components with data
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         {
             company: 'My Sheet Music Transcriptions',
             role: 'Growth Lead & Product Owner (January 2025 — Present)',
-            description: 'Leading the R&D and product development roadmap, leveraging open-source technology and the right talent to drive innovation and position the company at the forefront of industry advancements. The added value is not only having the right technical partners, but deeply understanding the craft we need to empower—MUSIC, the creative process, the rawness, and the intent behind every note.'
+            description: 'Leading the R&D and product development roadmap, leveraging open-source technology and the right talent to drive innovation and position the company at the forefront of industry advancements. The added value is not only having the right technical partners, but deeply understanding the craft we need to empower—MUSIC, the creative process, the rawness, and the intent behind every note. The focus is on augmenting the artist\'s expression and streamlining mundane tasks to leave room for the artistry to shine, rather than replacing the entire pipeline with sterile efficiency.'
         },
         {
             company: 'UPF-BMAT Chair in AI and Music',
@@ -119,6 +120,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     ];
 
+    const internshipsData = [
+        {
+            role: 'Master\'s Thesis Student in Music Applied Machine Learning',
+            company: 'Epidemic Sound, Stockholm',
+            period: 'January 2023 — July 2023',
+            description: 'Researched deep music embeddings with the Music Applied and Machine Learning team, focusing on automatic music segmentation using advanced machine learning techniques. Conducted experiments and data analysis on Google Cloud Platform while staying current with developments in music analytics, production, licensing, and ML. Collaborated with the A&R team to initiate music theory seminars, strengthening cross-functional communication and industry insight.'
+        }
+    ];
+
+    const referencesData = [
+        {
+            name: 'Carl Thomé',
+            company: 'Epidemic Sound',
+            position: 'Senior Research Engineer',
+            email: 'carl.thome@epidemicsound.com'
+        }
+    ];
+
     const projectsData = [
         {
             title: 'Uncovering High-Level Content in the Time Domain',
@@ -154,6 +173,32 @@ document.addEventListener('DOMContentLoaded', async () => {
             })
         );
         educationContainer.innerHTML = educationHtml.join('');
+    }
+
+    // Load internship items
+    const internshipsContainer = document.getElementById('internships-container');
+    if (internshipsContainer) {
+        const internshipsHtml = await Promise.all(
+            internshipsData.map(async (data) => {
+                const response = await fetch('components/internship-item.html');
+                const template = await response.text();
+                return componentLoader.renderTemplate(template, data);
+            })
+        );
+        internshipsContainer.innerHTML = internshipsHtml.join('');
+    }
+
+    // Load reference items
+    const referencesContainer = document.getElementById('references-container');
+    if (referencesContainer) {
+        const referencesHtml = await Promise.all(
+            referencesData.map(async (data) => {
+                const response = await fetch('components/reference-item.html');
+                const template = await response.text();
+                return componentLoader.renderTemplate(template, data);
+            })
+        );
+        referencesContainer.innerHTML = referencesHtml.join('');
     }
 
     // Load project cards
