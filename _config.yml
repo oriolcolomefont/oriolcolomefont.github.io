@@ -23,7 +23,6 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: pretty
 
 # Collections
 collections:
