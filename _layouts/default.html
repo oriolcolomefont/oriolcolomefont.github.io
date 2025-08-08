@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}music technology, MIR, product development, music information retrieval, audio processing{% endif %}">
+    <meta name="author" content="{{ site.author.name }}">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+    {% endif %}
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Jekyll SEO Tag -->
+    {% seo %}
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - RSS Feed" href="{{ site.url }}/feed.xml">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f0f4ff',
+                500: '#667eea',
+                600: '#5a67d8',
+                700: '#4c51bf',
+                900: '#764ba2',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
+    
+    <!-- Additional styles for blog posts -->
+    {% if page.layout == 'post' %}
+    <style>
+        .post-content {
+            @apply prose prose-lg max-w-none;
+        }
+        .post-content h1, .post-content h2, .post-content h3 {
+            @apply text-gray-900 font-bold;
+        }
+        .post-content h1 { @apply text-3xl mb-6; }
+        .post-content h2 { @apply text-2xl mb-4; }
+        .post-content h3 { @apply text-xl mb-3; }
+        .post-content p { @apply mb-4 text-gray-700 leading-relaxed; }
+        .post-content ul, .post-content ol { @apply mb-4 pl-6; }
+        .post-content li { @apply mb-2; }
+        .post-content code { @apply bg-gray-100 px-2 py-1 rounded text-sm; }
+        .post-content pre { @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto mb-4; }
+        .post-content blockquote { @apply border-l-4 border-primary-500 pl-4 italic text-gray-600; }
+    </style>
+    {% endif %}
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Component Loader -->
+    <script src="{{ '/js/components.js' | relative_url }}"></script>
+    
+    <!-- Jekyll Feed -->
+    {% feed_meta %}
+</body>
+</html>

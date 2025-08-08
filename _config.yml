@@ -1,0 +1,77 @@
+# Jekyll Configuration for Oriol Colomé Font - Music Tech Generalist
+
+# Site settings
+title: "Oriol Colomé Font"
+description: "Music-Tech Generalist: All Things Music. Growth Lead & Product Owner at My Sheet Music Transcriptions. Bridging the gap between artistic vision and technical implementation."
+email: "oriolcolomefont@gmail.com"
+url: "https://oriolcolomefont.github.io"
+baseurl: ""
+
+# Author information
+author:
+  name: "Oriol Colomé Font"
+  bio: "Music-Tech Generalist with over a decade of experience across the music industry"
+  location: "Terrassa, Barcelona"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/oriolcolomefont"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/oriolcolomefont"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Oriol Colomé Font"
+      comments: true
+      share: true
+
+# Blog settings
+blog:
+  title: "Music Tech Insights"
+  description: "Thoughts on music technology, MIR, and industry trends"
+  posts_per_page: 5
+  categories:
+    - "Music Information Retrieval"
+    - "Audio Processing"
+    - "Industry Insights"
+    - "Project Management"
+    - "Deep Learning"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages
+  - _posts
+  - assets
+  - components
+  - js
