@@ -23,7 +23,7 @@ author:
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title/
+permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
