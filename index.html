@@ -3,17 +3,19 @@ layout: default
 title: "Home"
 ---
 
-    <!-- Hero Component -->
-    <div id="hero-container"></div>
+    <!-- Hero Include -->
+    {% include hero.html %}
 
-    <!-- About Component -->
-    <div id="about-container"></div>
+    <!-- About Include -->
+    {% include about.html %}
 
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Experience</h2>
-            <div id="experience-container"></div>
+            {% for item in site.data.experience %}
+              {% include experience-item.html company=item.company role=item.role description=item.description %}
+            {% endfor %}
         </div>
     </section>
 
@@ -21,7 +23,9 @@ title: "Home"
     <section id="education" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Education</h2>
-            <div id="education-container"></div>
+            {% for item in site.data.education %}
+              {% include education-item.html degree=item.degree institution=item.institution period=item.period description=item.description %}
+            {% endfor %}
         </div>
     </section>
 
@@ -29,7 +33,9 @@ title: "Home"
     <section id="internships" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Internships</h2>
-            <div id="internships-container"></div>
+            {% for item in site.data.internships %}
+              {% include internship-item.html role=item.role company=item.company period=item.period description=item.description %}
+            {% endfor %}
         </div>
     </section>
 
@@ -37,20 +43,26 @@ title: "Home"
     <section id="references" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">References</h2>
-            <div id="references-container"></div>
+            {% for item in site.data.references %}
+              {% include reference-item.html name=item.name company=item.company position=item.position email=item.email %}
+            {% endfor %}
         </div>
     </section>
 
     <!-- Courses Section -->
-    <div id="courses-container"></div>
+    {% include courses-section.html %}
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
-            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {% for item in site.data.projects %}
+                {% include project-card.html title=item.title description=item.description %}
+              {% endfor %}
+            </div>
         </div>
     </section>
 
-    <!-- Contact Component -->
-    <div id="contact-container"></div>
+    <!-- Contact Include -->
+    {% include contact.html %}

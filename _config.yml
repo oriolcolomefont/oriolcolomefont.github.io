@@ -24,6 +24,12 @@ author:
 markdown: kramdown
 highlighter: rouge
 
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 # Collections
 collections:
   posts:
@@ -69,5 +75,3 @@ include:
   - _pages
   - _posts
   - assets
-  - components
-  - js

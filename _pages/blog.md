@@ -2,6 +2,7 @@
 layout: default
 title: "Blog - Music Tech Insights"
 description: "Thoughts on music technology, MIR, and industry trends from Oriol Colomé Font"
+permalink: /blog/
 ---
 
 <section class="py-20 bg-gradient-to-br from-primary-900 via-primary-700 to-primary-600 text-white relative overflow-hidden">
@@ -23,9 +24,31 @@ description: "Thoughts on music technology, MIR, and industry trends from Oriol 
 
 <section class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Category filters -->
-        <div class="mb-12 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Browse by Category</h2>
+        <!-- Search and Category filters -->
+        <div class="mb-12">
+            <!-- Search Bar -->
+            <div class="mb-8 text-center">
+                <div class="max-w-md mx-auto">
+                    <div class="relative">
+                        <input type="text" id="search-input" placeholder="Search posts..." 
+                               class="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-4">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button id="clear-search" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 hidden">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category filters -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Browse by Category</h2>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#all" class="category-filter bg-primary-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-700 transition-colors" data-category="all">
                     All Posts
@@ -75,7 +98,7 @@ description: "Thoughts on music technology, MIR, and industry trends from Oriol 
                     
                     <!-- Title -->
                     <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                     </h3>
                     
                     <!-- Description -->
@@ -119,46 +142,90 @@ description: "Thoughts on music technology, MIR, and industry trends from Oriol 
 </section>
 
 <script>
-// Category filtering functionality
+// Enhanced blog functionality with search and filtering
 document.addEventListener('DOMContentLoaded', function() {
-    const categoryFilters = document.querySelectorAll('.category-filter');
-    const blogPosts = document.querySelectorAll('.blog-post');
-    const noPostsMessage = document.getElementById('no-posts');
+  const categoryFilters = document.querySelectorAll('.category-filter');
+  const blogPosts = document.querySelectorAll('.blog-post');
+  const noPostsMessage = document.getElementById('no-posts');
+  const searchInput = document.getElementById('search-input');
+  const clearSearch = document.getElementById('clear-search');
+  
+  let currentCategory = 'all';
+  let currentSearchTerm = '';
 
-    categoryFilters.forEach(filter => {
-        filter.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Update active filter
-            categoryFilters.forEach(f => {
-                f.classList.remove('bg-primary-600', 'text-white');
-                f.classList.add('bg-gray-200', 'text-gray-700');
-            });
-            this.classList.remove('bg-gray-200', 'text-gray-700');
-            this.classList.add('bg-primary-600', 'text-white');
-            
-            const selectedCategory = this.getAttribute('data-category');
-            
-            // Filter posts
-            let visiblePosts = 0;
-            blogPosts.forEach(post => {
-                const postCategories = post.getAttribute('data-categories');
-                if (selectedCategory === 'all' || postCategories.includes(selectedCategory)) {
-                    post.style.display = 'block';
-                    visiblePosts++;
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-            
-            // Show/hide no posts message
-            if (visiblePosts === 0) {
-                noPostsMessage.classList.remove('hidden');
-            } else {
-                noPostsMessage.classList.add('hidden');
-            }
-        });
+  // Search functionality
+  function performSearch() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    currentSearchTerm = searchTerm;
+    
+    // Show/hide clear button
+    clearSearch.classList.toggle('hidden', searchTerm === '');
+    
+    filterPosts();
+  }
+
+  // Filter posts based on category and search
+  function filterPosts() {
+    let visiblePosts = 0;
+    
+    blogPosts.forEach(post => {
+      const cats = post.getAttribute('data-categories') || '';
+      const title = post.querySelector('h3').textContent.toLowerCase();
+      const description = post.querySelector('p').textContent.toLowerCase();
+      
+      const matchesCategory = currentCategory === 'all' || cats.includes(currentCategory);
+      const matchesSearch = currentSearchTerm === '' || 
+                           title.includes(currentSearchTerm) || 
+                           description.includes(currentSearchTerm) ||
+                           cats.toLowerCase().includes(currentSearchTerm);
+      
+      const show = matchesCategory && matchesSearch;
+      post.style.display = show ? 'block' : 'none';
+      if (show) visiblePosts++;
     });
+    
+    noPostsMessage.classList.toggle('hidden', visiblePosts > 0);
+  }
+
+  // Search input events
+  searchInput.addEventListener('input', debounce(performSearch, 300));
+  clearSearch.addEventListener('click', function() {
+    searchInput.value = '';
+    currentSearchTerm = '';
+    clearSearch.classList.add('hidden');
+    filterPosts();
+  });
+
+  // Category filtering with event delegation
+  document.addEventListener('click', function(e) {
+    if (!e.target.matches('.category-filter')) return;
+    
+    e.preventDefault();
+    
+    // Reset all filters
+    categoryFilters.forEach(f => {
+      f.className = f.className.replace(/bg-primary-\d+|text-white/g, '').trim() + ' bg-gray-200 text-gray-700';
+    });
+    
+    // Activate clicked filter
+    e.target.className = e.target.className.replace(/bg-gray-\d+|text-gray-\d+/g, '').trim() + ' bg-primary-600 text-white';
+
+    currentCategory = e.target.getAttribute('data-category');
+    filterPosts();
+  });
+
+  // Debounce function for search performance
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
 });
 </script>
 

@@ -1,4 +1,4 @@
-<section class="bg-gradient-to-br from-primary-900 via-primary-700 to-primary-600 text-white py-20 relative overflow-hidden">
+<section class="bg-gradient-to-br from-primary-900 via-primary-700 to-primary-600 text-white py-20 relative overflow-hidden antialiased">
     <!-- Animated background elements -->
     <div class="absolute inset-0 bg-gradient-to-r from-primary-600/10 to-purple-600/10"></div>
     <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-48 -translate-y-48 animate-pulse"></div>
@@ -9,24 +9,23 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="text-center lg:text-left space-y-8">
                 <div class="space-y-4">
-                    <h1 class="text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent animate-fade-in">
+                    <h1 class="text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg animate-fade-in">
                         Oriol Colomé Font
                     </h1>
-                    <h2 class="text-3xl lg:text-4xl font-light mb-8 text-gray-200 animate-fade-in-delay">
+                    <h2 class="text-3xl lg:text-4xl font-light mb-8 text-white/90 animate-fade-in-delay">
                         Music-Tech Generalist: All Things Music
                     </h2>
                 </div>
                 
-                <p class="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto lg:mx-0 text-gray-200 leading-relaxed animate-fade-in-delay-2">
+                <p class="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto lg:mx-0 text-white/85 leading-relaxed animate-fade-in-delay-2">
                     A music tech generalist with over a decade of experience across the music industry and its wiggly-air-multi-modal-cognitive-phenomenon we call MUSIC. Currently leading innovation at My Sheet Music Transcriptions, bridging creative, technical, and strategic domains.
                 </p>
                 
                 <div class="flex flex-wrap justify-center lg:justify-start gap-6 animate-fade-in-delay-3">
                     <a href="#contact" 
                        class="group relative bg-gradient-to-r from-white to-gray-100 text-primary-700 px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/20 hover:border-white/40">
-                        <span class="relative z-10">Get in Touch</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span class="relative z-10 group-hover:text-white transition-colors duration-300">Get in Touch</span>
+                        <span class="relative z-10 transition-colors duration-300 group-hover:text-white">Get in Touch</span>
                     </a>
                     
                     <a href="#projects" 
@@ -34,7 +33,7 @@
                         <span class="relative z-10">View Projects</span>
                     </a>
                     
-                    <a href="assets/documents/oriol_colome_cv.pdf" target="_blank" 
+                    <a href="{{ '/assets/documents/oriol_colome_cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer"
                        class="group relative bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-2 border-primary-500/30 hover:border-primary-400/50 flex items-center gap-3">
                         <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -46,16 +45,14 @@
             
             <div class="flex justify-center lg:justify-end">
                 <div class="relative group">
-                    <!-- Glowing effect behind the image -->
                     <div class="absolute inset-0 bg-gradient-to-r from-primary-400 to-purple-500 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
-                    
-                    <!-- Main image container -->
                     <div class="relative">
-                        <img src="assets/images/profile.jpeg" 
-                             alt="Oriol Colomé Font" 
+                        <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" 
+                             alt="Oriol Colomé Font - Music Tech Generalist"
+                             width="384" height="384" 
+                             loading="lazy" 
+                             decoding="async"
                              class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-white/20 shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2">
-                        
-                        <!-- Floating elements around the image -->
                         <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce delay-300"></div>
                         <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full animate-bounce delay-700"></div>
                         <div class="absolute top-1/2 -right-8 w-4 h-4 bg-primary-400 rounded-full animate-ping"></div>
@@ -65,7 +62,6 @@
         </div>
     </div>
     
-    <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -74,39 +70,23 @@
 </section>
 
 <style>
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in-delay {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in-delay-2 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in-delay-3 {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-    animation: fade-in 1s ease-out;
-}
-
-.animate-fade-in-delay {
-    animation: fade-in-delay 1s ease-out 0.2s both;
-}
-
-.animate-fade-in-delay-2 {
-    animation: fade-in-delay-2 1s ease-out 0.4s both;
-}
-
-.animate-fade-in-delay-3 {
-    animation: fade-in-delay-3 1s ease-out 0.6s both;
+@keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-in-delay { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-in-delay-2 { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-in-delay-3 { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-fade-in-delay { animation: fade-in-delay 1s ease-out 0.2s both; }
+.animate-fade-in-delay-2 { animation: fade-in-delay-2 1s ease-out 0.4s both; }
+.animate-fade-in-delay-3 { animation: fade-in-delay-3 1s ease-out 0.6s both; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in, .animate-fade-in-delay, .animate-fade-in-delay-2, .animate-fade-in-delay-3, .animate-bounce, .animate-pulse, .animate-ping { 
+    animation: none !important; 
+    transform: none !important;
+  }
+  .transition-all, .transition-transform, .transition-opacity { 
+    transition: none !important; 
+  }
 }
 </style>
+
+

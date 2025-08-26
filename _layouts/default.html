@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     
     <!-- SEO Meta Tags -->
@@ -27,12 +31,31 @@
     <!-- Jekyll SEO Tag -->
     {% seo %}
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.author.name }}",
+      "url": "{{ site.url }}",
+      "description": "{{ site.description }}",
+      "jobTitle": "Growth Lead & Product Owner",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "My Sheet Music Transcriptions"
+      },
+      "knowsAbout": ["Music Technology", "Music Information Retrieval", "Product Development", "Deep Learning"],
+      "sameAs": [
+        {% for link in site.author.links %}"{{ link.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }
+    </script>
+    
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - RSS Feed" href="{{ site.url }}/feed.xml">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -50,43 +73,26 @@
         }
       }
     </script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography" defer></script>
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
     
-    <!-- Additional styles for blog posts -->
-    {% if page.layout == 'post' %}
-    <style>
-        .post-content {
-            @apply prose prose-lg max-w-none;
-        }
-        .post-content h1, .post-content h2, .post-content h3 {
-            @apply text-gray-900 font-bold;
-        }
-        .post-content h1 { @apply text-3xl mb-6; }
-        .post-content h2 { @apply text-2xl mb-4; }
-        .post-content h3 { @apply text-xl mb-3; }
-        .post-content p { @apply mb-4 text-gray-700 leading-relaxed; }
-        .post-content ul, .post-content ol { @apply mb-4 pl-6; }
-        .post-content li { @apply mb-2; }
-        .post-content code { @apply bg-gray-100 px-2 py-1 rounded text-sm; }
-        .post-content pre { @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto mb-4; }
-        .post-content blockquote { @apply border-l-4 border-primary-500 pl-4 italic text-gray-600; }
-    </style>
-    {% endif %}
+    
+    <!-- Basic CSP (limited by meta tag constraints) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; object-src 'none'">
 </head>
 <body>
-    <!-- Header Component -->
-    <div id="header-container"></div>
+    {% include header.html %}
 
-    <main>
+    <main id="main-content">
         {{ content }}
     </main>
 
-    <!-- Footer Component -->
-    <div id="footer-container"></div>
+    {% include footer.html %}
 
-    <!-- Component Loader -->
-    <script src="{{ '/js/components.js' | relative_url }}"></script>
+    <!-- Expose baseurl for JS -->
+    <script>window.SITE_BASEURL = "{{ site.baseurl }}";</script>
+    
     
     <!-- Jekyll Feed -->
     {% feed_meta %}

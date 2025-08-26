@@ -29,6 +29,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
 
       - name: Setup Ruby
@@ -40,7 +41,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           bundle install
-          bundle exec jekyll build --baseurl "${{ steps.page-setup.outputs.base_path }}"
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
