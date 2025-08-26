@@ -7,26 +7,20 @@ options = {
   # Disable external link checking for faster local validation
   disable_external: true,
   
-  # Check for valid HTML structure
-  check_html: true,
-  
-  # Check images have alt tags and valid sources
-  check_img_http: true,
-  
-  # Check for valid Open Graph tags
-  check_opengraph: true,
+  # Specify which checks to run (updated for html-proofer 5.x)
+  checks: ['Images', 'Links', 'Scripts', 'OpenGraph'],
   
   # Allow hash hrefs for internal navigation
   allow_hash_href: true,
   
   # Ignore some files
-  file_ignore: [
+  ignore_files: [
     # Ignore any temporary files
     /.*\.tmp$/
   ],
   
   # URL ignore patterns
-  url_ignore: [
+  ignore_urls: [
     # Ignore mailto links
     /^mailto:/,
     # Ignore tel links  

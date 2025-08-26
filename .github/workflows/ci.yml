@@ -25,7 +25,7 @@ jobs:
     - name: Test HTML
       run: |
         gem install html-proofer
-        htmlproofer ./_site --disable-external --check-html --check-img-http --check-opengraph
+        htmlproofer ./_site --disable-external --checks Images,Links,Scripts,OpenGraph
     
     - name: Lighthouse CI
       uses: treosh/lighthouse-ci-action@v10
