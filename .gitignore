@@ -30,3 +30,12 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Jekyll build files
+_site/
+.bundle/
+vendor/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
