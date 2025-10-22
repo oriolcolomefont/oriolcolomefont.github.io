@@ -1,16 +1,55 @@
 ---
 layout: default
 permalink: /404.html
-title: "Page not found"
+title: "Page Not Found"
+description: "The page you're looking for doesn't exist"
 ---
 
-<section class="py-24 text-center">
-  <div class="max-w-3xl mx-auto px-6">
-    <h1 class="text-6xl font-extrabold text-gray-900 mb-6">404</h1>
-    <p class="text-xl text-gray-600 mb-10">Sorry, we couldn’t find the page you’re looking for.</p>
-    <a href="{{ '/' | relative_url }}" class="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg">Go home</a>
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+    <!-- Large 404 with gradient -->
+    <div class="mb-8">
+      <h1 class="text-9xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
+        404
+      </h1>
+    </div>
+    
+    <!-- Error message -->
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h2>
+      <p class="text-xl text-gray-600 mb-4">
+        Oops! The page you're looking for seems to have wandered off into the digital void.
+      </p>
+      <p class="text-gray-500">
+        It might have been removed, had its name changed, or is temporarily unavailable.
+      </p>
+    </div>
+    
+    <!-- Illustration -->
+    <div class="mb-12">
+      <svg class="w-64 h-64 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+    
+    <!-- Action buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ '/' | relative_url }}" 
+         class="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        Go Home
+      </a>
+      
+      <a href="{{ '/blog/' | relative_url }}" 
+         class="inline-flex items-center justify-center border-2 border-primary-600 text-primary-600 hover:bg-primary-50 px-8 py-3 rounded-xl font-semibold transition-all duration-300">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        Read Blog
+      </a>
+    </div>
   </div>
-  </section>
-
-
+</section>
 
