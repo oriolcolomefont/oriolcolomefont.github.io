@@ -40,6 +40,9 @@ collections:
   posts:
     output: true
     permalink: /blog/:title/
+  notebooks:
+    output: true
+    permalink: /notebooks/:title/
 
 # Defaults
 defaults:
@@ -51,6 +54,12 @@ defaults:
       author: "Oriol Colomé Font"
       comments: true
       share: true
+  - scope:
+      path: ""
+      type: "notebooks"
+    values:
+      layout: "notebook"
+      author: "Oriol Colomé Font"
 
 # Blog settings
 blog:

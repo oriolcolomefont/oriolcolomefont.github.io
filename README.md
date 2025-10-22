@@ -21,6 +21,7 @@ A modern, high-performance personal website built with Jekyll, featuring a blog,
 - [Build Process](#build-process)
 - [Deployment](#deployment)
 - [Content Management](#content-management)
+- [Jupyter Notebooks](#jupyter-notebooks)
 - [Project Structure](#project-structure)
 - [Performance](#performance)
 - [Contributing](#contributing)
