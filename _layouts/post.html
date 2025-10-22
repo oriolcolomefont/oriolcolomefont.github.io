@@ -67,9 +67,15 @@ layout: default
             <!-- Featured image -->
             {% if page.image %}
             <div class="mb-8">
-                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg">
+                <img src="{{ page.image | relative_url }}" 
+                     alt="{{ page.title }}" 
+                     loading="lazy"
+                     class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg">
             </div>
             {% endif %}
+            
+            <!-- Table of Contents -->
+            {% include toc.html %}
             
             <!-- Content -->
             <div class="prose prose-lg max-w-none">
@@ -112,6 +118,9 @@ layout: default
                     </a>
                 </div>
             </div>
+            
+            <!-- Related Posts -->
+            {% include related-posts.html %}
         </div>
     </div>
 </article>

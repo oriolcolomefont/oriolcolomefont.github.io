@@ -55,31 +55,15 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - RSS Feed" href="{{ site.url }}/feed.xml">
     
     <!-- Stylesheets -->
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                50: '#f0f4ff',
-                500: '#667eea',
-                600: '#5a67d8',
-                700: '#4c51bf',
-                900: '#764ba2',
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <script src="https://cdn.tailwindcss.com?plugins=typography" defer></script>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="{{ '/assets/css/styles.css' | relative_url }}" as="style">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
-    
-    
-    <!-- Basic CSP (limited by meta tag constraints) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; object-src 'none'">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
 </head>
 <body>
     {% include header.html %}
