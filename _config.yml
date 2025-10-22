@@ -30,6 +30,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Feed settings
+feed:
+  posts_limit: 20
+  excerpt_only: false
+
 # Collections
 collections:
   posts:
@@ -69,9 +74,28 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .github/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - README.md
+  - DEPLOYMENT_READY.md
+  - scripts/
+  - "*.plan.md"
 
 # Include files
 include:
   - _pages
   - _posts
   - assets
+  - robots.txt
+
+# Performance optimizations
+sass:
+  style: compressed
+
+# Liquid rendering
+liquid:
+  error_mode: strict
+  strict_filters: true
+  strict_variables: false

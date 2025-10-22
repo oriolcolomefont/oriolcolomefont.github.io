@@ -1,6 +1,11 @@
+---
+layout: none
+permalink: /robots.txt
+---
 User-agent: *
 Allow: /
 Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
 
-
+# Disallow admin and internal pages
+Disallow: /assets/documents/
 
