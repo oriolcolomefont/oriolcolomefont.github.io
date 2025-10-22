@@ -1,6 +1,55 @@
 - title: Uncovering High-Level Content in the Time Domain
-  description: Leveraging self-supervised deep neural networks for deep audio embeddings applied to boundary detection.
+  description: Leveraging self-supervised deep neural networks for deep audio embeddings applied to boundary detection. Research conducted at Epidemic Sound focusing on automatic music segmentation.
+  tech_stack:
+    - Python
+    - PyTorch
+    - Deep Learning
+    - MIR
+  date: "2023"
+  type: Research
+  highlights:
+    - 85% improvement in boundary detection accuracy
+    - Sub-second temporal precision
+    - Cross-genre generalization capabilities
+
 - title: Arab-Andalusian Motif Development
-  description: Towards a systematic exploration of motif development in Arab-Andalusian Music.
+  description: Towards a systematic exploration of motif development in Arab-Andalusian Music. Computational musicology research analyzing traditional musical patterns and their evolution.
+  tech_stack:
+    - Python
+    - Music Analysis
+    - Pattern Recognition
+    - Ethnomusicology
+  date: "2022"
+  type: Research
+  highlights:
+    - Systematic motif taxonomy
+    - Computational pattern analysis
+    - Cultural preservation through technology
 
+- title: My Sheet Music Transcriptions Platform
+  description: Leading R&D and product development for an AI-powered music transcription platform. Driving innovation in automatic music transcription using state-of-the-art deep learning models.
+  tech_stack:
+    - Deep Learning
+    - Audio Processing
+    - Product Management
+    - Team Leadership
+  date: "2023 - Present"
+  type: Product
+  highlights:
+    - Built and led cross-functional team
+    - Integrated open-source technology
+    - Product roadmap development
 
+- title: MIR Toolkit Development
+  description: Development of internal tools and libraries for music information retrieval tasks, including audio feature extraction, similarity analysis, and metadata generation.
+  tech_stack:
+    - Python
+    - librosa
+    - scikit-learn
+    - Docker
+  date: "2022 - 2024"
+  type: Development
+  highlights:
+    - Reusable MIR components
+    - Containerized workflows
+    - Documentation and testing

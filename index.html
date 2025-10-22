@@ -55,10 +55,16 @@ title: "Home"
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               {% for item in site.data.projects %}
-                {% include project-card.html title=item.title description=item.description %}
+                {% include project-card.html 
+                   title=item.title 
+                   description=item.description 
+                   type=item.type 
+                   date=item.date 
+                   tech_stack=item.tech_stack 
+                   highlights=item.highlights %}
               {% endfor %}
             </div>
         </div>
