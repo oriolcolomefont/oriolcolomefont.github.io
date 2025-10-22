@@ -1,41 +1,34 @@
-# OS generated files
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Node
+node_modules/
+package-lock.json
+
+# Build outputs
+assets/css/styles.css
+assets/css/styles.css.map
+assets/images/optimized/
+
+# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# Editor files
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Temporary files
-*.tmp
-*.temp
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Large media files (consider using Git LFS for these)
-# *.mp4
-# *.mov
-# *.avi
-# *.wmv
-
-# Backup files
-*.bak
-*.backup
-
-# Log files
-*.log
-
-# Jekyll build files
-_site/
-.bundle/
-vendor/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-Gemfile.lock
+# Environment
+.env
+.env.local

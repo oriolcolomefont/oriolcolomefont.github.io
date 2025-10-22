@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for hero section */
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-delay {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-delay-2 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-delay-3 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fade-in-delay 1s ease-out 0.2s both;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation: fade-in-delay-2 1s ease-out 0.4s both;
+  }
+  
+  .animate-fade-in-delay-3 {
+    animation: fade-in-delay-3 1s ease-out 0.6s both;
+  }
+  
+  /* Line clamp utility for blog previews */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-delay,
+    .animate-fade-in-delay-2,
+    .animate-fade-in-delay-3,
+    .animate-bounce,
+    .animate-pulse,
+    .animate-ping {
+      animation: none !important;
+      transform: none !important;
+    }
+    
+    .transition-all,
+    .transition-transform,
+    .transition-opacity {
+      transition: none !important;
+    }
+  }
+}
+
+/* Custom scrollbar styling */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+  }
+}
+

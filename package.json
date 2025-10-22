@@ -1,0 +1,34 @@
+{
+  "name": "oriolcolomefont-portfolio",
+  "version": "1.0.0",
+  "description": "Personal website for Oriol Colomé Font - Music Tech Generalist",
+  "private": true,
+  "scripts": {
+    "build:css": "NODE_ENV=production tailwindcss -i ./assets/css/main.css -o ./_site/assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --watch",
+    "build": "npm run build:css && bundle exec jekyll build",
+    "dev": "concurrently \"npm run watch:css\" \"bundle exec jekyll serve --livereload\"",
+    "optimize:images": "node scripts/optimize-images.js"
+  },
+  "keywords": [
+    "portfolio",
+    "jekyll",
+    "music-technology",
+    "personal-website"
+  ],
+  "author": "Oriol Colomé Font",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^8.0.0",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}
+
