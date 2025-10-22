@@ -4,7 +4,7 @@
   "description": "Personal website for Oriol Colomé Font - Music Tech Generalist",
   "private": true,
   "scripts": {
-    "build:css": "NODE_ENV=production tailwindcss -i ./assets/css/main.css -o ./_site/assets/css/styles.css --minify",
+    "build:css": "NODE_ENV=production tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --watch",
     "build": "npm run build:css && bundle exec jekyll build",
     "dev": "concurrently \"npm run watch:css\" \"bundle exec jekyll serve --livereload\"",
