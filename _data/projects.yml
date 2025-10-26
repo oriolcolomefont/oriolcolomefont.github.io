@@ -11,6 +11,11 @@
     - 85% improvement in boundary detection accuracy
     - Sub-second temporal precision
     - Cross-genre generalization capabilities
+  links:
+    - url: https://zenodo.org/records/8380670
+      label: Zenodo
+    - url: https://github.com/oriolcolomefont/Uncovering-High-Level-Content-in-the-Time-Domain
+      label: GitHub
 
 - title: Arab-Andalusian Motif Development
   description: Towards a systematic exploration of motif development in Arab-Andalusian Music. Computational musicology research analyzing traditional musical patterns and their evolution.
