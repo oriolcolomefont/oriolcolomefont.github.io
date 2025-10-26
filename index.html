@@ -9,11 +9,12 @@ title: "Home"
 <!-- About Section -->
 {% include about.html %}
 
-<!-- Angle Divider: White to Gray-50 -->
-{% include angle-divider.html bg_from="bg-white" dark_from="dark:bg-surface-950" fill="fill-gray-50" dark_fill="dark:fill-surface-900" %}
+<!-- Angle Divider -->
+{% include angle-divider.html type="white_to_gray" %}
 
 <!-- Experience Section -->
-<section id="experience" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section id="experience" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
@@ -27,11 +28,12 @@ title: "Home"
     </div>
 </section>
 
-<!-- Angle Divider: Gray-50 to White (Reverse) -->
-{% include angle-divider-reverse.html bg_from="bg-gray-50" dark_from="dark:bg-surface-900" fill="fill-white" dark_fill="dark:fill-surface-950" %}
+<!-- Angle Divider -->
+{% include angle-divider-reverse.html type="gray_to_white" %}
 
 <!-- Education Section -->
-<section id="education" class="py-20 bg-white dark:bg-surface-950 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+<section id="education" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
@@ -45,11 +47,12 @@ title: "Home"
     </div>
 </section>
 
-<!-- Angle Divider: White to Gray-50 -->
-{% include angle-divider.html bg_from="bg-white" dark_from="dark:bg-surface-950" fill="fill-gray-50" dark_fill="dark:fill-surface-900" %}
+<!-- Angle Divider -->
+{% include angle-divider.html type="white_to_gray" %}
 
 <!-- Internships Section -->
-<section id="internships" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section id="internships" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Internships</h2>
@@ -63,17 +66,18 @@ title: "Home"
     </div>
 </section>
 
-<!-- Angle Divider: Gray-50 to White (Reverse) -->
-{% include angle-divider-reverse.html bg_from="bg-gray-50" dark_from="dark:bg-surface-900" fill="fill-white" dark_fill="dark:fill-surface-950" %}
+<!-- Angle Divider -->
+{% include angle-divider-reverse.html type="gray_to_white" %}
 
 <!-- Additional Courses Section -->
 {% include courses-section.html %}
 
-<!-- Angle Divider: White to Gray-50 -->
-{% include angle-divider.html bg_from="bg-white" dark_from="dark:bg-surface-950" fill="fill-gray-50" dark_fill="dark:fill-surface-900" %}
+<!-- Angle Divider -->
+{% include angle-divider.html type="white_to_gray" %}
 
 <!-- Projects Section -->
-<section id="projects" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section id="projects" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
@@ -93,11 +97,12 @@ title: "Home"
     </div>
 </section>
 
-<!-- Angle Divider: Gray-50 to White (Reverse) -->
-{% include angle-divider-reverse.html bg_from="bg-gray-50" dark_from="dark:bg-surface-900" fill="fill-white" dark_fill="dark:fill-surface-950" %}
+<!-- Angle Divider -->
+{% include angle-divider-reverse.html type="gray_to_white" %}
 
 <!-- References Section -->
-<section id="references" class="py-20 bg-white dark:bg-surface-950 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+<section id="references" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">References</h2>
@@ -111,8 +116,8 @@ title: "Home"
     </div>
 </section>
 
-<!-- Angle Divider: White to Gray-50 -->
-{% include angle-divider.html bg_from="bg-white" dark_from="dark:bg-surface-950" fill="fill-gray-50" dark_fill="dark:fill-surface-900" %}
+<!-- Angle Divider -->
+{% include angle-divider.html type="white_to_gray" %}
 
 <!-- Contact Section -->
 {% include contact.html %}

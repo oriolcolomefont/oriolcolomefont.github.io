@@ -1,20 +1,22 @@
-<section id="courses" class="py-20 bg-white dark:bg-surface-950 theme-transition">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Additional Courses</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400">Specialized training and workshops</p>
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+{% assign colors = site.data.theme.section_colors.course %}
+<section id="courses" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+    <div class="{{ site.data.theme.classes.section_container_narrow }}">
+        <div class="{{ site.data.theme.classes.section_header }}">
+            <h2 class="{{ site.data.theme.classes.section_title }}">Additional Courses</h2>
+            <p class="{{ site.data.theme.classes.section_subtitle }}">Specialized training and workshops</p>
         </div>
         
-        <article class="card hover-lift p-8 border-l-4 border-purple-500 dark:border-purple-400">
+        <article class="{{ site.data.theme.classes.card }} {{ site.data.theme.classes.card_padding_large }} border-l-4 {{ colors.border }}">
             <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center">
-                    <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 {{ colors.icon_bg }} rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 {{ colors.icon_text }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
                     </svg>
                 </div>
                 <div class="flex-1">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Generative Music AI Workshop</h3>
-                    <p class="text-lg text-purple-600 dark:text-purple-400 font-semibold mb-4">Universitat Pompeu Fabra (Music Technology Group)</p>
+                    <p class="text-lg {{ colors.title_text }} font-semibold mb-4">Universitat Pompeu Fabra (Music Technology Group)</p>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Advanced workshop focusing on generative AI applications in music technology and composition.</p>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-<section id="contact" class="py-20 bg-gray-50 dark:bg-surface-950 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section id="contact" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16">

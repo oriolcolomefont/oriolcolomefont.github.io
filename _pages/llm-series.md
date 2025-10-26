@@ -50,7 +50,8 @@ permalink: /llm-series/
 </section>
 
 <!-- Progress Section -->
-<section class="py-16 bg-white dark:bg-surface-950 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Learning Progress</h2>
         

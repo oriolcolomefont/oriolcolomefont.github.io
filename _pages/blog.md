@@ -19,7 +19,8 @@ permalink: /blog/
     </div>
 </section>
 
-<section class="py-16 bg-white dark:bg-surface-950 theme-transition">
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Search and Filters -->
         <div class="mb-12 space-y-8">

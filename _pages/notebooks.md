@@ -15,8 +15,9 @@ permalink: /notebooks/
     </div>
 </section>
 
-<section class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+    <div class="{{ site.data.theme.classes.section_container }}">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for notebook in site.notebooks %}
             <article class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -105,8 +106,9 @@ permalink: /notebooks/
 </section>
 
 <!-- Info Section -->
-<section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+{% assign bg = site.data.theme.sections.backgrounds.white %}
+<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+    <div class="{{ site.data.theme.classes.section_container_narrow }}">
         <div class="bg-primary-50 border-l-4 border-primary-600 p-6 rounded-r-xl">
             <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
                 <svg class="w-6 h-6 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

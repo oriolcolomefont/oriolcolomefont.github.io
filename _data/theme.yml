@@ -1,0 +1,93 @@
+# Theme Constants and Design Tokens
+# Centralized configuration for consistent styling across the site
+
+# Section Backgrounds (alternating pattern)
+sections:
+  backgrounds:
+    white:
+      light: "bg-white"
+      dark: "dark:bg-surface-950"
+    gray:
+      light: "bg-gray-50"
+      dark: "dark:bg-surface-900"
+
+# Common Class Combinations
+classes:
+  section_padding: "py-20"
+  section_container: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+  section_container_narrow: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+  
+  # Headers
+  section_header: "text-center mb-16"
+  section_title: "text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+  section_subtitle: "text-xl text-gray-600 dark:text-gray-400"
+  
+  # Theme Transition
+  theme_transition: "theme-transition"
+  
+  # Cards
+  card: "card hover-lift"
+  card_padding: "p-6"
+  card_padding_large: "p-8"
+
+# Color Schemes for Different Section Types
+section_colors:
+  experience:
+    icon_bg: "bg-primary-100 dark:bg-primary-900"
+    icon_text: "text-primary-600 dark:text-primary-400"
+    title_text: "text-primary-600 dark:text-primary-400"
+  
+  education:
+    icon_bg: "bg-primary-100 dark:bg-primary-900"
+    icon_text: "text-primary-600 dark:text-primary-400"
+    title_text: "text-primary-600 dark:text-primary-400"
+    border: "border-primary-500 dark:border-primary-400"
+  
+  internship:
+    icon_bg: "bg-info-100 dark:bg-info-900"
+    icon_text: "text-info-600 dark:text-info-400"
+    title_text: "text-info-600 dark:text-info-400"
+    border: "border-info-500 dark:border-info-400"
+  
+  reference:
+    icon_bg: "bg-success-100 dark:bg-success-900"
+    icon_text: "text-success-600 dark:text-success-400"
+    title_text: "text-success-600 dark:text-success-400"
+    border: "border-success-500 dark:border-success-400"
+  
+  course:
+    icon_bg: "bg-purple-100 dark:bg-purple-900"
+    icon_text: "text-purple-600 dark:text-purple-400"
+    title_text: "text-purple-600 dark:text-purple-400"
+    border: "border-purple-500 dark:border-purple-400"
+
+# Angle Divider Configurations
+angle_dividers:
+  white_to_gray:
+    bg_from: "bg-white"
+    dark_from: "dark:bg-surface-950"
+    fill: "fill-gray-50"
+    dark_fill: "dark:fill-surface-900"
+  
+  gray_to_white:
+    bg_from: "bg-gray-50"
+    dark_from: "dark:bg-surface-900"
+    fill: "fill-white"
+    dark_fill: "dark:fill-surface-950"
+
+# Spacing
+spacing:
+  section_vertical: "py-20"
+  section_vertical_small: "py-16"
+  header_bottom: "mb-16"
+  header_bottom_small: "mb-12"
+  element_gap: "space-y-6"
+  grid_gap: "gap-6"
+  grid_gap_large: "gap-8"
+
+# Responsive Grid Patterns
+grids:
+  two_column: "grid md:grid-cols-2 gap-6"
+  three_column: "grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+  auto_fit: "grid grid-cols-1 md:grid-cols-2 gap-8"
+

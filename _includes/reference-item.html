@@ -1,13 +1,14 @@
-<article class="card hover-lift p-6 border-l-4 border-success-500 dark:border-success-400">
+{% assign colors = site.data.theme.section_colors.reference %}
+<article class="{{ site.data.theme.classes.card }} {{ site.data.theme.classes.card_padding }} border-l-4 {{ colors.border }}">
   <div class="flex items-start gap-4">
-    <div class="flex-shrink-0 w-10 h-10 bg-success-100 dark:bg-success-900 rounded-lg flex items-center justify-center">
-      <svg class="w-5 h-5 text-success-600 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="flex-shrink-0 w-10 h-10 {{ colors.icon_bg }} rounded-lg flex items-center justify-center">
+      <svg class="w-5 h-5 {{ colors.icon_text }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
       </svg>
     </div>
     <div class="flex-1">
       <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ include.name }}</h3>
-      <p class="text-lg text-success-600 dark:text-success-400 font-semibold mb-2">{{ include.company }}</p>
+      <p class="text-lg {{ colors.title_text }} font-semibold mb-2">{{ include.company }}</p>
       <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ include.position }}</p>
       <div class="flex items-center gap-2">
         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

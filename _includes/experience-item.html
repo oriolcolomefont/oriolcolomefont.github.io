@@ -1,13 +1,14 @@
-<article class="card hover-lift p-8">
+{% assign colors = site.data.theme.section_colors.experience %}
+<article class="{{ site.data.theme.classes.card }} {{ site.data.theme.classes.card_padding_large }}">
   <div class="flex items-start gap-4">
-    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl flex items-center justify-center">
-      <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="flex-shrink-0 w-12 h-12 {{ colors.icon_bg }} rounded-xl flex items-center justify-center">
+      <svg class="w-6 h-6 {{ colors.icon_text }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
       </svg>
     </div>
     <div class="flex-1">
       <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{ include.company }}</h3>
-      <p class="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-4">{{ include.role }}</p>
+      <p class="text-lg {{ colors.title_text }} font-semibold mb-4">{{ include.role }}</p>
       <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{{ include.description }}</p>
     </div>
   </div>
