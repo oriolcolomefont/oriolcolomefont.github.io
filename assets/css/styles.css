@@ -3083,6 +3083,55 @@ body {
       radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
 }
 
+/* Depth layer system */
+.depth-layer-back {
+  position: absolute;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.3;
+  transform: translateZ(-100px);
+}
+
+.depth-layer-mid {
+  position: absolute;
+  z-index: 1;
+  filter: blur(40px);
+  opacity: 0.5;
+  transform: translateZ(-50px);
+}
+
+.depth-layer-front {
+  position: relative;
+  z-index: 10;
+}
+
+/* Animated gradient orbs for depth */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Scroll reveal animations */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 /* Text gradient utility */
 
 /* Line clamp utilities */
@@ -3137,6 +3186,10 @@ body {
 
   .hover-lift:hover {
     transform: none;
+  }
+  
+  .gradient-orb {
+    animation: none !important;
   }
 }
 
