@@ -1,5 +1,5 @@
 {% assign bg = site.data.theme.sections.backgrounds.white %}
-<section id="about" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+<section id="about" class="{{ site.data.theme.spacing.section_vertical }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}" data-reveal>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
@@ -35,7 +35,7 @@
       <!-- Sidebar -->
       <div class="space-y-6">
         <!-- Technical Skills -->
-        <div class="card p-6">
+        <div class="card p-6" data-reveal>
           <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <svg class="w-5 h-5 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -43,18 +43,18 @@
             Technical Skills
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Python</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Deep Learning</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">MIR</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Audio DSP</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Git</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Docker</span>
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">Data Analysis</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Python</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Deep Learning</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">MIR</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Audio DSP</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Git</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Docker</span>
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Data Analysis</span>
           </div>
         </div>
         
         <!-- Soft Skills -->
-        <div class="card p-6">
+        <div class="card p-6" data-reveal>
           <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <svg class="w-5 h-5 text-success-600 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -62,16 +62,16 @@
             Soft Skills
           </h3>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium">Leadership</span>
-            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium">Communication</span>
-            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium">Problem Solving</span>
-            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium">Analytical</span>
-            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium">All things music</span>
+            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Leadership</span>
+            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Communication</span>
+            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Problem Solving</span>
+            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">Analytical</span>
+            <span class="px-3 py-1 bg-success-100 dark:bg-success-900 text-success-800 dark:text-success-200 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">All things music</span>
           </div>
         </div>
         
         <!-- Location -->
-        <div class="card p-6">
+        <div class="card p-6" data-reveal>
           <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <svg class="w-5 h-5 text-info-600 dark:text-info-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>

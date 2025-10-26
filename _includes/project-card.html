@@ -1,4 +1,4 @@
-<article class="card hover-lift group h-full flex flex-col">
+<article class="card card-depth hover-lift group h-full flex flex-col" data-reveal>
   <!-- Project type badge and date -->
   {% if include.type or include.date %}
   <div class="px-6 pt-6">
@@ -53,7 +53,7 @@
         <h4 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Technologies</h4>
         <div class="flex flex-wrap gap-2">
           {% for tech in include.tech_stack %}
-          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-800 dark:hover:text-primary-200 transition-colors">
+          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-800 dark:hover:text-primary-200 transition-all duration-200 hover:scale-105 hover:shadow-elevation-1 hover:-translate-y-0.5">
             {{ tech }}
           </span>
           {% endfor %}

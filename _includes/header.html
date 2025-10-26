@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200/50 theme-transition dark:bg-surface-950/80 dark:border-gray-800/50" id="main-header">
+<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200/50 theme-transition dark:bg-surface-950/80 dark:border-gray-800/50 shadow-elevation-1" id="main-header">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Brand -->
@@ -94,7 +94,8 @@
 .nav-link {
   @apply block px-6 py-3 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300;
   @apply hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800;
-  @apply transition-colors relative;
+  @apply transition-all duration-300 ease-out relative;
+  @apply hover:shadow-elevation-1 hover:-translate-y-0.5;
 }
 
 .nav-link.active {
@@ -104,7 +105,8 @@
 .mobile-nav-link {
   @apply block w-full px-4 py-3 rounded-xl text-base font-medium text-gray-700 dark:text-gray-300;
   @apply hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800;
-  @apply transition-colors;
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-elevation-1 hover:-translate-y-0.5;
 }
 </style>
 
@@ -207,6 +209,51 @@
     lastScroll = currentScroll;
   });
 })();
+
+// Parallax scroll effect
+document.addEventListener('DOMContentLoaded', () => {
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  
+  // Respect reduced motion preferences
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      
+      parallaxElements.forEach(el => {
+        const speed = el.dataset.parallax || 0.5;
+        const yPos = -(scrolled * speed);
+        el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      });
+    });
+  }
+});
+
+// Scroll reveal with depth
+document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      el.classList.add('reveal-hidden');
+      observer.observe(el);
+    });
+  }
+});
 </script>
 
 

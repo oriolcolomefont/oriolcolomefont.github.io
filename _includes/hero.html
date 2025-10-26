@@ -2,19 +2,24 @@
     <!-- Subtle gradient mesh background -->
     <div class="absolute inset-0 gradient-mesh opacity-30"></div>
     
+    <!-- Multi-layer depth background -->
+    <div class="depth-layer-back gradient-orb w-96 h-96 bg-primary-500/20 top-0 right-0" data-parallax="0.3"></div>
+    <div class="depth-layer-back gradient-orb w-80 h-80 bg-purple-500/20 bottom-0 left-0" style="animation-delay: -10s" data-parallax="0.5"></div>
+    <div class="depth-layer-mid gradient-orb w-64 h-64 bg-blue-500/20 top-1/2 left-1/2" style="animation-delay: -5s" data-parallax="0.2"></div>
+    
     <!-- Minimalist background decoration -->
     <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-primary-500/10 to-transparent rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
     
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="depth-layer-front max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <!-- Content Column -->
             <div class="text-center lg:text-left space-y-8">
                 <div class="space-y-4">
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight" style="text-shadow: 0 2px 8px rgb(0 0 0 / 0.15), 0 1px 4px rgb(0 0 0 / 0.1);">
                         Oriol Colomé
                     </h1>
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-light text-white/90">
+                    <p class="text-2xl sm:text-3xl lg:text-4xl font-light text-white/90" style="text-shadow: 0 1px 4px rgb(0 0 0 / 0.1);">
                         Music-tech generalist
                     </p>
                 </div>
@@ -27,19 +32,19 @@
                 <!-- CTAs -->
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                     <a href="#contact" 
-                       class="btn btn-primary press-effect">
+                       class="btn btn-primary press-effect hover:shadow-primary-glow transition-all duration-300">
                         Get in Touch
                     </a>
                     
                     <a href="#projects" 
-                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect focus-visible:ring-white/50">
+                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect focus-visible:ring-white/50 hover:shadow-elevation-2 transition-all duration-300">
                         View Projects
                     </a>
                     
                     <a href="{{ '/assets/documents/oriol_colome_cv.pdf' | relative_url }}" 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect inline-flex gap-2 focus-visible:ring-white/50">
+                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect inline-flex gap-2 focus-visible:ring-white/50 hover:shadow-elevation-2 transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
@@ -51,8 +56,12 @@
             <!-- Image Column -->
             <div class="flex justify-center lg:justify-end">
                 <div class="relative group">
-                    <!-- Subtle glow effect -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-purple-500 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    <!-- Multi-layer glow -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-purple-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-all duration-700 animate-pulse"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-10 group-hover:opacity-25 transition-all duration-700" style="animation: float 15s ease-in-out infinite"></div>
+                    
+                    <!-- Ring system for depth -->
+                    <div class="absolute inset-0 rounded-full ring-4 ring-white/10 ring-offset-4 ring-offset-transparent group-hover:ring-white/20 transition-all duration-500"></div>
                     
                     <!-- Profile Image -->
                     <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" 
@@ -61,7 +70,7 @@
                          height="400" 
                          loading="eager" 
                          decoding="async"
-                         class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full border-2 border-white/20 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                         class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full border-2 border-white/20 shadow-elevation-5 group-hover:shadow-primary-glow-lg transition-all duration-500 hover:scale-[1.03]">
                 </div>
             </div>
         </div>

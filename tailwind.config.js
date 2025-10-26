@@ -113,17 +113,29 @@ module.exports = {
         '9xl': '96rem',
       },
       boxShadow: {
-        'sm': '0 1px 2px 0 rgb(0 0 0 / 0.03)',
-        'DEFAULT': '0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)',
-        'md': '0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08)',
-        'lg': '0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08)',
-        'xl': '0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08)',
-        '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.20)',
+        // Enhanced existing shadows
+        'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'DEFAULT': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+        'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'lg': '0 10px 15px -3px rgb(0 0 0 / 0.12), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'xl': '0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
         'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
-        'elevation-1': '0 1px 3px 0 rgb(0 0 0 / 0.06)',
-        'elevation-2': '0 4px 8px 0 rgb(0 0 0 / 0.08)',
-        'elevation-3': '0 12px 24px 0 rgb(0 0 0 / 0.10)',
-        'elevation-4': '0 24px 48px 0 rgb(0 0 0 / 0.12)',
+        
+        // New elevation levels for spatial depth
+        'elevation-1': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06)',
+        'elevation-2': '0 4px 8px 0 rgb(0 0 0 / 0.12), 0 2px 4px 0 rgb(0 0 0 / 0.08)',
+        'elevation-3': '0 12px 24px 0 rgb(0 0 0 / 0.15), 0 4px 8px 0 rgb(0 0 0 / 0.1)',
+        'elevation-4': '0 24px 48px 0 rgb(0 0 0 / 0.18), 0 8px 16px 0 rgb(0 0 0 / 0.12)',
+        'elevation-5': '0 32px 64px 0 rgb(0 0 0 / 0.2), 0 12px 24px 0 rgb(0 0 0 / 0.15)',
+        
+        // Colored shadows for depth
+        'primary-glow': '0 8px 32px -8px rgb(99 102 241 / 0.4)',
+        'primary-glow-lg': '0 16px 48px -12px rgb(99 102 241 / 0.5)',
+        'purple-glow': '0 8px 32px -8px rgb(168 85 247 / 0.4)',
+        
+        // Inner shadows for depth
+        'inner-lg': 'inset 0 2px 8px 0 rgb(0 0 0 / 0.08)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

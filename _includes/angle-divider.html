@@ -1,7 +1,23 @@
 <!-- Angled Section Divider -->
 {% assign divider = site.data.theme.angle_dividers[include.type] | default: site.data.theme.angle_dividers.white_to_gray %}
 <div class="relative h-16 md:h-20 overflow-hidden {{ divider.bg_from }} {{ divider.dark_from }}">
-  <svg class="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shadow layer for depth -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent"></div>
+  
+  <!-- Main divider -->
+  <svg class="absolute bottom-0 w-full h-full drop-shadow-lg" preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0L1440 120H0V0Z" class="{{ divider.fill }} {{ divider.dark_fill }}" />
+  </svg>
+  
+  <!-- Highlight layer -->
+  <svg class="absolute bottom-0 w-full h-full opacity-20" preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0L1440 120H0V0Z" fill="url(#divider-gradient)" />
+    <defs>
+      <linearGradient id="divider-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgb(99,102,241);stop-opacity:0" />
+        <stop offset="50%" style="stop-color:rgb(99,102,241);stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:rgb(99,102,241);stop-opacity:0" />
+      </linearGradient>
+    </defs>
   </svg>
 </div>
