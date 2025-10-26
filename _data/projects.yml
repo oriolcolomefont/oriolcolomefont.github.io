@@ -30,6 +30,11 @@
     - Systematic motif taxonomy
     - Computational pattern analysis
     - Cultural preservation through technology
+  links:
+    - url: https://github.com/oriolcolomefont/arab-andal-motif-dev
+      label: GitHub
+    - url: /assets/documents/TOWARDS_A_SYSTEMATIC_EXPLORATION_OF_MOTIF_DEVELOPMENT_IN_ARAB_ANDALUSIAN_MUSIC.pdf
+      label: Paper
 
 - title: My Sheet Music Transcriptions Platform
   description: Leading R&D and product development for an AI-powered music transcription platform. Driving innovation in automatic music transcription using state-of-the-art deep learning models.
