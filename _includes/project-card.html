@@ -3,14 +3,24 @@
   {% if include.type or include.date %}
   <div class="px-6 pt-6">
     <div class="flex items-center justify-between">
-      {% if include.type %}
-      <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
-        {% if include.type == 'Research' %}bg-info-50 text-info-700 dark:bg-info-950 dark:text-info-300{% endif %}
-        {% if include.type == 'Product' %}bg-success-50 text-success-700 dark:bg-success-950 dark:text-success-300{% endif %}
-        {% if include.type == 'Development' %}bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300{% endif %}">
-        {{ include.type }}
-      </span>
-      {% endif %}
+      <div class="flex items-center gap-2">
+        {% if include.category %}
+        <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+          {% if include.category == 'Music Tech' %}bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300{% endif %}
+          {% if include.category == 'Music' %}bg-orange-50 text-orange-700 dark:bg-orange-950 dark:text-orange-300{% endif %}">
+          {{ include.category }}
+        </span>
+        {% endif %}
+        {% if include.type %}
+        <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+          {% if include.type == 'Research' %}bg-info-50 text-info-700 dark:bg-info-950 dark:text-info-300{% endif %}
+          {% if include.type == 'Product' %}bg-success-50 text-success-700 dark:bg-success-950 dark:text-success-300{% endif %}
+          {% if include.type == 'Development' %}bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300{% endif %}
+          {% if include.type == 'Creative Work' %}bg-pink-50 text-pink-700 dark:bg-pink-950 dark:text-pink-300{% endif %}">
+          {{ include.type }}
+        </span>
+        {% endif %}
+      </div>
       {% if include.date %}
       <time class="text-sm text-gray-500 dark:text-gray-400">{{ include.date }}</time>
       {% endif %}
@@ -83,9 +93,9 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
-            {% elsif link.label == "Paper" or link.label == "PDF" %}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            {% elsif link.label == "SoundCloud" %}
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.051 0-.09.04-.099.098l-.157 1.326.157 1.265c.008.059.048.099.099.099.05 0 .09-.04.099-.099l.178-1.265-.178-1.326c-.009-.058-.049-.098-.099-.098m1.83-.576c-.05 0-.09.039-.099.098l-.255 1.902.255 1.863c.008.059.049.098.099.098.05 0 .09-.04.099-.098l.287-1.863-.287-1.902c-.009-.059-.049-.098-.099-.098m.918-.41c-.05 0-.09.04-.099.099l-.213 2.313.213 2.235c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.243-2.235-.243-2.313c-.009-.059-.05-.099-.099-.099m.92-.41c-.051 0-.09.04-.1.098l-.179 2.723.179 2.673c.009.059.049.098.1.098.05 0 .09-.039.098-.098l.204-2.673-.204-2.723c-.008-.058-.048-.098-.098-.098m.92-.41c-.05 0-.09.04-.099.098l-.145 3.133.145 3.054c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.173-3.054-.173-3.133c-.009-.058-.049-.098-.099-.098m.92-.41c-.05 0-.09.04-.099.098l-.11 3.543.11 3.464c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.137-3.464-.137-3.543c-.009-.058-.049-.098-.099-.098m.92-.41c-.05 0-.09.04-.099.098l-.076 3.953.076 3.874c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.105-3.874-.105-3.953c-.009-.058-.049-.098-.099-.098m.92-.41c-.05 0-.09.04-.099.098l-.042 4.363.042 4.284c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.07-4.284-.07-4.363c-.009-.058-.049-.098-.099-.098m.92-.41c-.05 0-.09.04-.099.098l-.008 4.773.008 4.694c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.035-4.694-.035-4.773c-.009-.058-.049-.098-.099-.098m7.043 0c-.05 0-.09.04-.099.098l-.008 4.773.008 4.694c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.035-4.694-.035-4.773c-.009-.058-.049-.098-.099-.098m-.92.41c-.05 0-.09.04-.099.098l-.042 4.363.042 4.284c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.07-4.284-.07-4.363c-.009-.058-.049-.098-.099-.098m-.92.41c-.05 0-.09.04-.099.098l-.076 3.953.076 3.874c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.105-3.874-.105-3.953c-.009-.058-.049-.098-.099-.098m-.92.41c-.05 0-.09.04-.099.098l-.11 3.543.11 3.464c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.137-3.464-.137-3.543c-.009-.058-.049-.098-.099-.098m-.92.41c-.05 0-.09.04-.099.098l-.145 3.133.145 3.054c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.173-3.054-.173-3.133c-.009-.058-.049-.098-.099-.098m-.92.41c-.05 0-.09.04-.099.098l-.179 2.723.179 2.673c.008.059.049.098.099.098.05 0 .09-.039.098-.098l.204-2.673-.204-2.723c-.008-.058-.048-.098-.098-.098m-.92.41c-.05 0-.09.04-.099.099l-.213 2.313.213 2.235c.008.058.049.098.099.098.05 0 .09-.04.099-.098l.243-2.235-.243-2.313c-.009-.059-.05-.099-.099-.099m-.92.41c-.05 0-.09.039-.099.098l-.255 1.902.255 1.863c.008.059.049.098.099.098.05 0 .09-.04.099-.098l.287-1.863-.287-1.902c-.009-.059-.049-.098-.099-.098m-.92.576c-.05 0-.09.04-.099.098l-.157 1.326.157 1.265c.008.059.048.099.099.099.05 0 .09-.04.099-.099l.178-1.265-.178-1.326c-.009-.058-.049-.098-.099-.098"/>
             </svg>
             {% else %}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

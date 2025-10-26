@@ -7,8 +7,9 @@
     - MIR
   date: "2023"
   type: Research
+  category: Music Tech
   highlights:
-    - 85% improvement in boundary detection accuracy
+    - 33% accuracy in boundary detection
     - Sub-second temporal precision
     - Cross-genre generalization capabilities
   links:
@@ -26,6 +27,7 @@
     - Ethnomusicology
   date: "2022"
   type: Research
+  category: Music
   highlights:
     - Systematic motif taxonomy
     - Computational pattern analysis
@@ -45,6 +47,7 @@
     - Team Leadership
   date: "2023 - Present"
   type: Product
+  category: Music Tech
   highlights:
     - Built and led cross-functional team
     - Integrated open-source technology
@@ -59,7 +62,26 @@
     - Docker
   date: "2022 - 2024"
   type: Development
+  category: Music Tech
   highlights:
     - Reusable MIR components
     - Containerized workflows
     - Documentation and testing
+
+- title: Elements Of Iceland - Documentary Soundtrack
+  description: Original soundtrack composition for documentary film exploring Iceland's natural landscapes and cultural heritage. Created atmospheric soundscapes blending electronic and acoustic elements.
+  tech_stack:
+    - Logic Pro
+    - Native Instruments
+    - Field Recording
+    - Sound Design
+  date: "2024"
+  type: Creative Work
+  category: Music
+  highlights:
+    - Atmospheric soundscape composition
+    - Blend of electronic and acoustic elements
+    - Documentary film soundtrack
+  links:
+    - url: https://soundcloud.com/your-profile/elements-of-iceland
+      label: SoundCloud
