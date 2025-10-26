@@ -2,6 +2,9 @@
   company: Epidemic Sound, Stockholm
   period: January 2023 — July 2023
   description: >-
-    Researched deep music embeddings focusing on automatic music segmentation with advanced ML techniques.
+    Researched deep music embeddings: trained self-supervised triplet networks on raw audio to learn timbre-invariant embeddings, reaching F = 0.288—competitive with early baselines and promising for low-resource music segmentation.
 
+    Collaborated with the A&R team to initiate music theory seminars, strengthening cross-functional communication and industry insight.
+
+    Gained first-hand exposure to the Scandinavian music industry, culture, and emerging trends, deepening understanding of how local artistry connects with global audiences.
 
