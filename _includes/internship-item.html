@@ -1,9 +1,15 @@
-<div class="bg-white p-6 rounded-lg shadow-md mb-6 border-l-4 border-blue-500">
-  <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ include.role }}</h3>
-  <p class="text-lg text-blue-600 mb-2">{{ include.company }}</p>
-  <p class="text-gray-600 mb-3">{{ include.period }}</p>
-  <p class="text-gray-700">{{ include.description }}</p>
-</div>
-
-
-
+<article class="card hover-lift p-6 border-l-4 border-info-500 dark:border-info-400">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 bg-info-100 dark:bg-info-900 rounded-lg flex items-center justify-center">
+      <svg class="w-5 h-5 text-info-600 dark:text-info-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ include.role }}</h3>
+      <p class="text-lg text-info-600 dark:text-info-400 font-semibold mb-2">{{ include.company }}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ include.period }}</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{{ include.description }}</p>
+    </div>
+  </div>
+</article>

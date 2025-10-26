@@ -3,72 +3,95 @@ layout: default
 title: "Home"
 ---
 
-    <!-- Hero Include -->
-    {% include hero.html %}
+<!-- Hero Section -->
+{% include hero.html %}
 
-    <!-- About Include -->
-    {% include about.html %}
+<!-- About Section -->
+{% include about.html %}
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Experience</h2>
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Professional journey in music technology</p>
+        </div>
+        <div class="space-y-6">
             {% for item in site.data.experience %}
               {% include experience-item.html company=item.company role=item.role description=item.description %}
             {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Education</h2>
+<!-- Education Section -->
+<section id="education" class="py-20 bg-white dark:bg-surface-950 theme-transition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Academic background</p>
+        </div>
+        <div class="space-y-6">
             {% for item in site.data.education %}
               {% include education-item.html degree=item.degree institution=item.institution period=item.period description=item.description %}
             {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Internships Section -->
-    <section id="internships" class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Internships</h2>
+<!-- Internships Section -->
+<section id="internships" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Internships</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Early career experiences</p>
+        </div>
+        <div class="space-y-6">
             {% for item in site.data.internships %}
               {% include internship-item.html role=item.role company=item.company period=item.period description=item.description %}
             {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- References Section -->
-    <section id="references" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">References</h2>
+<!-- Additional Courses Section -->
+{% include courses-section.html %}
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-50 dark:bg-surface-900 theme-transition">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Recent work and highlights</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {% for item in site.data.projects %}
+            {% include project-card.html 
+               title=item.title 
+               description=item.description 
+               type=item.type 
+               date=item.date 
+               tech_stack=item.tech_stack 
+               highlights=item.highlights %}
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- References Section -->
+<section id="references" class="py-20 bg-white dark:bg-surface-950 theme-transition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">References</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Professional recommendations</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
             {% for item in site.data.references %}
               {% include reference-item.html name=item.name company=item.company position=item.position email=item.email %}
             {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Courses Section -->
-    {% include courses-section.html %}
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {% for item in site.data.projects %}
-                {% include project-card.html 
-                   title=item.title 
-                   description=item.description 
-                   type=item.type 
-                   date=item.date 
-                   tech_stack=item.tech_stack 
-                   highlights=item.highlights %}
-              {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Include -->
-    {% include contact.html %}
+<!-- Contact Section -->
+{% include contact.html %}

@@ -1,9 +1,17 @@
-<div class="bg-white p-6 rounded-lg shadow-md mb-6 border-l-4 border-primary-500">
-  <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ include.degree }}</h3>
-  <p class="text-lg text-primary-600 mb-2">{{ include.institution }}</p>
-  <p class="text-gray-600 mb-3">{{ include.period }}</p>
-  <p class="text-gray-700">{{ include.description }}</p>
-</div>
-
-
-
+<article class="card hover-lift p-6 border-l-4 border-primary-500 dark:border-primary-400">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
+      <svg class="w-5 h-5 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ include.degree }}</h3>
+      <p class="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-2">{{ include.institution }}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ include.period }}</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{{ include.description }}</p>
+    </div>
+  </div>
+</article>
