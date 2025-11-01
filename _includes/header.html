@@ -13,9 +13,42 @@
         <li><a href="{{ '/' | relative_url }}#about" class="nav-link">About</a></li>
         <li><a href="{{ '/' | relative_url }}#projects" class="nav-link">Projects</a></li>
         <li><a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a></li>
-        <li><a href="{{ '/llm-series/' | relative_url }}" class="nav-link">LLM Series</a></li>
-        <li><a href="{{ '/deep-learning-ramp-up/' | relative_url }}" class="nav-link">Deep Learning</a></li>
-        <li><a href="{{ '/notebooks/' | relative_url }}" class="nav-link">Notebooks</a></li>
+        <li><a href="{{ '/music/' | relative_url }}" class="nav-link">Music</a></li>
+        <li class="relative group">
+          <button class="nav-link flex items-center gap-1" id="coding-diary-dropdown-button" aria-expanded="false" aria-haspopup="true" aria-describedby="coding-diary-tooltip">
+            Coding diary
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 flex gap-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="w-56 bg-white dark:bg-surface-950 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+              <ul class="py-2">
+                <li>
+                  <a href="{{ '/llm-series/' | relative_url }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    LLM Series
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ '/deep-learning-ramp-up/' | relative_url }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    Deep Learning Ramp-Up
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ '/notebooks/' | relative_url }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    Notebooks
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Tooltip -->
+            <div id="coding-diary-tooltip" class="relative w-64 p-3 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg pointer-events-none self-center">
+              Beyond my GitHub profile, I document and reflect on my coding discoveries, progress, and projects in a blog-style journal.
+              <!-- Tooltip arrow -->
+              <div class="absolute right-full top-1/2 -translate-y-1/2 -mr-1 border-4 border-transparent border-r-gray-900 dark:border-r-gray-800"></div>
+            </div>
+          </div>
+        </li>
       </ul>
       
       <!-- Theme Toggle & Mobile Menu Button -->
@@ -77,9 +110,20 @@
             <li><a href="{{ '/' | relative_url }}#about" class="mobile-nav-link">About</a></li>
             <li><a href="{{ '/' | relative_url }}#projects" class="mobile-nav-link">Projects</a></li>
             <li><a href="{{ '/blog/' | relative_url }}" class="mobile-nav-link">Blog</a></li>
-            <li><a href="{{ '/llm-series/' | relative_url }}" class="mobile-nav-link">LLM Series</a></li>
-            <li><a href="{{ '/deep-learning-ramp-up/' | relative_url }}" class="mobile-nav-link">Deep Learning</a></li>
-            <li><a href="{{ '/notebooks/' | relative_url }}" class="mobile-nav-link">Notebooks</a></li>
+            <li><a href="{{ '/music/' | relative_url }}" class="mobile-nav-link">Music</a></li>
+            <li>
+              <button id="mobile-dl-diary-button" class="mobile-nav-link w-full text-left flex items-center justify-between" aria-expanded="false">
+                <span>Coding diary</span>
+                <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <ul id="mobile-dl-diary-menu" class="hidden pl-4 mt-1 space-y-1">
+                <li><a href="{{ '/llm-series/' | relative_url }}" class="mobile-nav-link">LLM Series</a></li>
+                <li><a href="{{ '/deep-learning-ramp-up/' | relative_url }}" class="mobile-nav-link">Deep Learning Ramp-Up</a></li>
+                <li><a href="{{ '/notebooks/' | relative_url }}" class="mobile-nav-link">Notebooks</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>
@@ -109,6 +153,11 @@
   @apply hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800;
   @apply transition-all duration-300 ease-out;
   @apply hover:shadow-elevation-1 hover:-translate-y-0.5;
+}
+
+/* Ensure dropdown menu is on top */
+.group:hover .absolute {
+  pointer-events: auto;
 }
 </style>
 
@@ -147,6 +196,27 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
       closeMenu();
+    }
+  });
+  
+  // Mobile DL diary dropdown toggle
+  const mobileDlDiaryButton = document.getElementById('mobile-dl-diary-button');
+  const mobileDlDiaryMenu = document.getElementById('mobile-dl-diary-menu');
+  const mobileDlDiaryIcon = mobileDlDiaryButton?.querySelector('svg');
+  
+  mobileDlDiaryButton?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isExpanded = mobileDlDiaryButton.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      mobileDlDiaryMenu.classList.add('hidden');
+      mobileDlDiaryButton.setAttribute('aria-expanded', 'false');
+      mobileDlDiaryIcon?.classList.remove('rotate-180');
+    } else {
+      mobileDlDiaryMenu.classList.remove('hidden');
+      mobileDlDiaryButton.setAttribute('aria-expanded', 'true');
+      mobileDlDiaryIcon?.classList.add('rotate-180');
     }
   });
   
