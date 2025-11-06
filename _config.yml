@@ -91,6 +91,8 @@ exclude:
   - DEPLOYMENT_READY.md
   - scripts/
   - "*.plan.md"
+  - _notebooks/README.md
+  - _notebooks/NOTEBOOKS_GUIDE.md
 
 # Include files
 include:
