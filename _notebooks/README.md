@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Research Notebooks
 
 This directory contains Jupyter notebooks for the portfolio/research section of the site.

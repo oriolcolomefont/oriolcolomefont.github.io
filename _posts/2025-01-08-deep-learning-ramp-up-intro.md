@@ -7,7 +7,6 @@ tags: ["deep-learning-ramp-up", "neural networks", "pytorch", "machine learning"
 author: "Oriol Colomé Font"
 read_time: 6
 description: "Beginning my deep learning journey through Jacob Buckman's comprehensive ramp-up curriculum, from basic linear regression to advanced transformer architectures."
-image: "/assets/images/deep-learning-ramp-up.jpg"
 ---
 
 ## Embarking on a Deep Learning Journey

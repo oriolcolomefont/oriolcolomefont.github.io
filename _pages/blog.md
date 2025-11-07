@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Blog - Music Tech Insights"
-description: "Thoughts on music technology, MIR, and industry trends from Oriol Colomé Font"
+title: "Blog"
+description: "Thoughts and opinions"
 permalink: /blog/
 ---
 
@@ -11,10 +11,10 @@ permalink: /blog/
     
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Music Tech Insights
+            Thoughts and opinions
         </h1>
         <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
-            Exploring the intersection of music, technology, and artificial intelligence
+            Unsolicited reflections on code, creativity, music, AI, life, parenthood, hobbies, and more—unsolicited thoughts and opinions included.
         </p>
     </div>
 </section>

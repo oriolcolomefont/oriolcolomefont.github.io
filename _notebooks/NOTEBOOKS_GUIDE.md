@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # 📓 Jupyter Notebooks Guide
 
 This site supports two ways to publish Jupyter notebooks:

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "About Me"
-description: "Music Tech Generalist with over a decade of experience bridging artistry, technology, and strategy"
+description: "Music tech generalist with over a decade of experience bridging artistry, technology, and strategy"
 permalink: /about/
 ---
 
@@ -10,7 +10,7 @@ permalink: /about/
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">About Me</h1>
         <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Music Tech Generalist bridging artistry, technology, and strategy
+            Music tech generalist bridging artistry, technology, and strategy
         </p>
     </div>
 </section>

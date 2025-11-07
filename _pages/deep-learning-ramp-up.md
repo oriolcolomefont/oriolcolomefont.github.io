@@ -23,7 +23,7 @@ permalink: /deep-learning-ramp-up/
         </h1>
         
         <p class="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8">
-            Building neural networks from scratch to advanced architectures with insights from music technology
+            Building neural networks from scratch to advanced architectures
         </p>
         
         <div class="flex flex-wrap justify-center gap-4">
