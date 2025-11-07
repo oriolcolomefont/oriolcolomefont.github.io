@@ -277,6 +277,106 @@ permalink: /music/
 <!-- Angle Divider -->
 {% include angle-divider.html type="white_to_gray" %}
 
+<!-- Spotify Section -->
+{% assign bg = site.data.theme.sections.backgrounds.gray %}
+<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">What I'm Listening To</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                Check out my Spotify playlists and discover what I'm currently listening to
+            </p>
+        </div>
+        
+        {% if site.data.site.spotify.featured_playlists.size > 0 %}
+        <div class="grid md:grid-cols-2 gap-8">
+            {% for playlist in site.data.site.spotify.featured_playlists %}
+            <div class="card p-6">
+                {% if playlist.title %}
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    {{ playlist.title }}
+                </h3>
+                {% endif %}
+                {% if playlist.description %}
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                    {{ playlist.description }}
+                </p>
+                {% endif %}
+                {% include spotify-embed.html type="playlist" id=playlist.id %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if site.data.site.spotify.profile_url %}
+        <div class="text-center mt-8">
+            <a href="{{ site.data.site.spotify.profile_url }}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Follow me on Spotify
+            </a>
+        </div>
+        {% endif %}
+        
+        {% else %}
+        <div class="text-center py-12 card">
+            <svg class="w-16 h-16 text-green-600 dark:text-green-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Spotify Integration</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Add your Spotify playlists to <code class="text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">_data/site.yml</code> to display them here.
+            </p>
+            {% if site.data.site.spotify.profile_url %}
+            <a href="{{ site.data.site.spotify.profile_url }}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Follow me on Spotify
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        {% if site.data.site.spotify.featured_artists.size > 0 %}
+        <div class="mt-16">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Latest Discoveries</h3>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Artists I've been listening to recently
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                {% for artist in site.data.site.spotify.featured_artists %}
+                <div class="card p-6">
+                    {% if artist.name %}
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        {{ artist.name }}
+                    </h3>
+                    {% endif %}
+                    {% if artist.description %}
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                        {{ artist.description }}
+                    </p>
+                    {% endif %}
+                    {% include spotify-embed.html type="artist" id=artist.id %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Angle Divider -->
+{% include angle-divider-reverse.html type="gray_to_white" %}
+
 <!-- About Music Section -->
 {% assign bg = site.data.theme.sections.backgrounds.white %}
 <section class="py-16 {{ bg.light }} {{ bg.dark }} theme-transition">

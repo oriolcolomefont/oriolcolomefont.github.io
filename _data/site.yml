@@ -51,3 +51,34 @@ author:
   bio_short: "Music tech generalist bridging artistry, technology, and strategy in music"
   bio_long: "Music tech generalist with over a decade of experience across the music industry and its wiggly-air-multi-modal-cognitive-phenomenon we call MUSIC. I thrive at the intersection of artistry, technology, and strategy."
 
+# Spotify Profile
+spotify:
+  # Your Spotify username or user ID
+  username: "31jdesc4e4cshoxdaiofol7pe25y"
+  # Your Spotify profile URL
+  profile_url: "https://open.spotify.com/user/31jdesc4e4cshoxdaiofol7pe25y"
+  # Featured playlists (add playlist IDs from Spotify URLs)
+  # To get playlist ID: Open playlist in Spotify → Share → Copy Playlist Link
+  # The ID is the part after /playlist/ in the URL
+  featured_playlists:
+    - id: "4SxYOn9ijkrsqBc1TVznpv"
+      title: "Choral magic"
+      description: "A curated selection of beautiful choral works featuring pieces by Morten Lauridsen, Eric Whitacre, Ola Gjeilo, and other contemporary choral composers"
+    - id: "7aeePjjuJ9wOSoCyFmpPqB"
+      title: "Així sí"
+      description: "Jazz and contemporary instrumental music featuring Pat Metheny, Brad Mehldau, Chris Potter, Snarky Puppy, and other great artists"
+    - id: "1cfeAXgoee9t2dOTCn4HnQ"
+      title: "EDM bangers"
+      description: "Electronic dance music featuring Jamie xx, deadmau5, Kaskade, Bizarrap, and other electronic artists"
+    - id: "6BoseOCjtUpaczhGIodcor"
+      title: "Classical touch"
+      description: "A playlist blending classical masterpieces and modern classical sounds for focus, reflection, and musical enjoyment"
+
+  # Featured artists (add artist IDs from Spotify URLs)
+  # To get artist ID: Open artist page in Spotify → Share → Copy Artist Link
+  # The ID is the part after /artist/ in the URL
+  featured_artists:
+    - id: "5qn6pF1kbBVi0CGryYRzcZ"
+      name: "Arnau Serrallonga"
+      description: "Catalan singer-songwriter. Latest discovery with the EP 'Els dies que vindran'"
+

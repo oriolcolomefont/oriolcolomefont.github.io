@@ -1,0 +1,24 @@
+{% comment %}
+  Spotify Embed Include
+  Usage: {% include spotify-embed.html type="playlist" id="YOUR_PLAYLIST_ID" %}
+  
+  Types: playlist, album, track, artist
+  Get IDs from Spotify URLs: https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
+  The ID is the part after the last slash: 37i9dQZF1DXcBWIGoYBM5M
+{% endcomment %}
+
+{% if include.type and include.id %}
+<div class="spotify-embed my-6">
+  <iframe 
+    style="border-radius:12px" 
+    src="https://open.spotify.com/embed/{{ include.type }}/{{ include.id }}?utm_source=generator{% if include.theme %}&theme={{ include.theme }}{% endif %}{% if include.width %}&width={{ include.width }}{% endif %}{% if include.height %}&height={{ include.height }}{% endif %}" 
+    width="100%" 
+    height="{% if include.height %}{{ include.height }}{% else %}352{% endif %}" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+</div>
+{% endif %}
+
