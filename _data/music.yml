@@ -1,70 +1,51 @@
 # Music Section Data
-# Creative and technical music work
+# Original compositions, soundtracks, and musical scores
 
 creative_works:
   - title: "Elements Of Iceland - Documentary Soundtrack"
     description: "Original soundtrack composition for documentary film exploring Iceland's natural landscapes and cultural heritage. Created atmospheric soundscapes blending electronic and acoustic elements."
     type: "Soundtrack"
-    year: "2024"
+    year: "2022"
     highlights:
       - "Atmospheric soundscape composition"
       - "Blend of electronic and acoustic elements"
       - "Documentary film soundtrack"
     links:
-      - url: "https://soundcloud.com/your-profile/elements-of-iceland"
+      - url: "https://soundcloud.com/oriol-colome-font/elements-of-iceland/s-xsyLbMBD1GM?si=765e97da65024343ab1f39cd20557956"
         label: "SoundCloud"
     image: "/assets/images/music/iceland-soundtrack.jpg"
-    
-  - title: "Arab-Andalusian Motif Development"
-    description: "Towards a systematic exploration of motif development in Arab-Andalusian Music. Computational musicology research analyzing traditional musical patterns and their evolution."
-    type: "Research"
-    year: "2022"
-    highlights:
-      - "Systematic motif taxonomy"
-      - "Computational pattern analysis"
-      - "Cultural preservation through technology"
-    links:
-      - url: "https://github.com/oriolcolomefont/arab-andal-motif-dev"
-        label: "GitHub"
-      - url: "/assets/documents/TOWARDS_A_SYSTEMATIC_EXPLORATION_OF_MOTIF_DEVELOPMENT_IN_ARAB_ANDALUSIAN_MUSIC.pdf"
-        label: "Paper"
-    image: "/assets/images/music/arab-andalusian.jpg"
 
-technical_work:
-  - title: "Uncovering High-Level Content in the Time Domain"
-    description: "Leveraging self-supervised deep neural networks for deep audio embeddings applied to boundary detection. Research conducted at Epidemic Sound focusing on automatic music segmentation."
-    type: "Research"
-    year: "2023"
-    highlights:
-      - "33% accuracy in boundary detection"
-      - "Sub-second temporal precision"
-      - "Cross-genre generalization capabilities"
-    links:
-      - url: "https://zenodo.org/records/8380670"
-        label: "Zenodo"
-      - url: "https://github.com/oriolcolomefont/Uncovering-High-Level-Content-in-the-Time-Domain"
-        label: "GitHub"
-    image: "/assets/images/music/mir-research.jpg"
-    
-  - title: "My Sheet Music Transcriptions Platform"
-    description: "Leading R&D and product development for an AI-powered music transcription platform. Driving innovation in automatic music transcription using state-of-the-art deep learning models."
-    type: "Product"
-    year: "2023 - Present"
-    highlights:
-      - "Built and led cross-functional team"
-      - "Integrated open-source technology"
-      - "Product roadmap development"
-    links: []
-    image: "/assets/images/music/transcription-platform.jpg"
-    
-  - title: "MIR Toolkit Development"
-    description: "Development of internal tools and libraries for music information retrieval tasks, including audio feature extraction, similarity analysis, and metadata generation."
-    type: "Development"
-    year: "2022 - 2024"
-    highlights:
-      - "Reusable MIR components"
-      - "Containerized workflows"
-      - "Documentation and testing"
-    links: []
-    image: "/assets/images/music/mir-toolkit.jpg"
+arrangements_and_orchestrations:
+  # Add your arrangements and orchestrations here
+  # Example:
+  # - title: "Example Arrangement"
+  #   description: "Description of the arrangement"
+  #   type: "Arrangement" # or "Orchestration"
+  #   year: "2024"
+  #   original_composer: "Original Composer Name" # optional
+  #   instrumentation: "String Quartet" # optional
+  #   highlights:
+  #     - "Highlight 1"
+  #     - "Highlight 2"
+  #   links:
+  #     - url: "https://example.com"
+  #       label: "View Score"
+  #   image: "/assets/images/music/arrangement.jpg"
+
+band_leader_and_performer:
+  # Add your band leader and performer projects here
+  # Example:
+  # - title: "Band Name or Project Name"
+  #   description: "Description of the project or performance"
+  #   role: "Band Leader" # or "Performer", "Co-Leader", etc.
+  #   year: "2024"
+  #   ensemble: "Jazz Quartet" # optional - type of ensemble
+  #   instrument: "Piano" # optional - your instrument
+  #   highlights:
+  #     - "Highlight 1"
+  #     - "Highlight 2"
+  #   links:
+  #     - url: "https://example.com"
+  #       label: "Listen"
+  #   image: "/assets/images/music/band-project.jpg"
 

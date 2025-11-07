@@ -1,0 +1,66 @@
+# Skills Data
+# Used in both homepage about section and standalone about page
+
+python_developer:
+  title: "Python Developer"
+  icon_color: "yellow-600"
+  icon_color_dark: "yellow-400"
+  icon_path: "M17 4l-2 4h-6l-2-4M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+  details:
+    - label: "Stack"
+      text: "FastAPI, Flask, Django, Poetry, pip, Pydantic, pytest, SQLAlchemy, Jupyter"
+    - label: "Skills"
+      text: "Building APIs & data pipelines, testing, automation, application monitoring, REST/async, packaging, deployment (Docker/GitHub Actions)"
+    - label: "Data"
+      text: "NumPy, pandas, matplotlib, seaborn, scikit-learn, basic ML & analytics"
+    - label: "Practices"
+      text: "Clean coding, code reviews, documentation, CI/CD, dependency management, versioning"
+    - label: "Environments"
+      text: "OSS contributions, collaborative/remote teams, product-focused R&D"
+  tags:
+    - "Python"
+    - "FastAPI"
+    - "Flask"
+    - "Django"
+    - "NumPy"
+    - "pandas"
+    - "pytest"
+    - "Git"
+    - "Docker"
+
+mir_audio_tech:
+  title: "MIR & Audio Tech"
+  icon_color: "indigo-600"
+  icon_color_dark: "indigo-400"
+  icon_path: "M3 18v-6a9 9 0 0118 0v6M21 18a2 2 0 01-2 2H5a2 2 0 01-2-2"
+  details:
+    - label: "MIR"
+      text: "MIR evaluation, symbolic & audio transcription, source separation, tempo/beat/key/chord analysis"
+    - label: "Toolkits"
+      text: "Essentia, librosa, madmom, pretty_midi, mir_eval, pyAudioAnalysis, Audacity scripting, Sonic Visualiser"
+    - label: "Audio"
+      text: "DSP, preprocessing, feature extraction (MFCC, chroma, spectral), up/downmixing, denoising, onset detection"
+    - label: "Music"
+      text: "Score/MIDI conversion, bot/agent composition, harmony analysis, music theory for feature engineering"
+    - label: "Applications"
+      text: "MIR for product features, large-scale audio pipelines, creative research, innovative UX for musicians"
+  tags:
+    - "MIR"
+    - "Essentia"
+    - "librosa"
+    - "madmom"
+    - "pretty_midi"
+    - "Audio Processing"
+    - "Music Theory"
+
+soft_skills:
+  title: "Soft Skills"
+  icon_color: "green-600"
+  icon_path: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+  tags:
+    - "Project Management"
+    - "Communication"
+    - "Problem Solving"
+    - "Analytical Thinking"
+    - "All things music"
+

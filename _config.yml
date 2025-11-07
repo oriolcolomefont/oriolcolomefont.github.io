@@ -1,8 +1,8 @@
-# Jekyll Configuration for Oriol Colomé Font - Music Tech Generalist
+# Jekyll Configuration
 
 # Site settings
 title: "Oriol Colomé Font"
-description: "Music-Tech Generalist: All Things Music. Growth Lead & Product Owner at My Sheet Music Transcriptions. Bridging the gap between artistic vision and technical implementation."
+description: "Music tech generalist: all things music. Growth lead & product owner at My Sheet Music Transcriptions. Bridging the gap between artistic vision and technical implementation."
 email: "oriolcolomefont@gmail.com"
 url: "https://oriolcolomefont.github.io"
 baseurl: ""
@@ -10,8 +10,8 @@ baseurl: ""
 # Author information
 author:
   name: "Oriol Colomé Font"
-  bio: "Music-Tech Generalist with over a decade of experience across the music industry"
-  location: "Terrassa, Barcelona"
+  bio: "Musician and music tech generalist with over a decade of experience across the industry"
+  location: "Based in Barcelona, available worldwide"
   links:
     - label: "GitHub"
       icon: "fab fa-github"
