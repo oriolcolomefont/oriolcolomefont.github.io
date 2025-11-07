@@ -92,8 +92,10 @@ layout: default
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <!-- Content (embedded HTML notebook) -->
-            <div class="notebook-content">
-                {{ content }}
+            <div class="notebook-content-wrapper">
+                <div class="notebook-content">
+                    {{ content }}
+                </div>
             </div>
             
             <!-- Tags -->
@@ -126,9 +128,44 @@ layout: default
 
 <!-- Custom styles for notebook content -->
 <style>
+/* Wrapper to isolate embedded notebook */
+.notebook-content-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Reset and constrain embedded notebook HTML */
 .notebook-content {
-    /* Preserve notebook styling */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Override any body/html styles from embedded notebook */
+.notebook-content body,
+.notebook-content html {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override Bootstrap container styles */
+.notebook-content .container,
+.notebook-content .container-fluid {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Constrain all content to fit */
+.notebook-content > * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .notebook-content pre {
@@ -137,6 +174,8 @@ layout: default
     padding: 16px;
     overflow-x: auto;
     margin: 1em 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .notebook-content code {
@@ -144,16 +183,20 @@ layout: default
     border-radius: 3px;
     padding: 2px 6px;
     font-size: 0.9em;
+    word-break: break-word;
 }
 
 .notebook-content pre code {
     background-color: transparent;
     padding: 0;
+    white-space: pre;
+    overflow-x: auto;
+    display: block;
 }
 
 .notebook-content img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100% !important;
+    height: auto !important;
     margin: 1.5em auto;
     display: block;
     border-radius: 8px;
@@ -162,8 +205,12 @@ layout: default
 
 .notebook-content table {
     border-collapse: collapse;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 1em 0;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .notebook-content th,
@@ -171,6 +218,7 @@ layout: default
     border: 1px solid #ddd;
     padding: 8px 12px;
     text-align: left;
+    white-space: nowrap;
 }
 
 .notebook-content th {
@@ -181,12 +229,115 @@ layout: default
 /* Jupyter notebook specific styles */
 .notebook-content .output_area {
     margin: 1em 0;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .notebook-content .prompt {
     color: #666;
     font-family: 'Monaco', 'Menlo', monospace;
     font-size: 0.85em;
+}
+
+/* Override any wide elements */
+.notebook-content .cell,
+.notebook-content .input_area,
+.notebook-content .output_area {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure plots and figures are responsive */
+.notebook-content .output_png,
+.notebook-content .output_svg,
+.notebook-content .output_jpeg {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Fix any Bootstrap grid issues */
+.notebook-content .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+.notebook-content [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Override Bootstrap container fixed widths */
+.notebook-content .container,
+.notebook-content #notebook-container,
+.notebook-content .container-fluid {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .notebook-content .container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .notebook-content .container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .notebook-content .container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+/* Ensure all direct children are constrained */
+.notebook-content > html,
+.notebook-content > body {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override any fixed widths in the notebook */
+.notebook-content * {
+    box-sizing: border-box !important;
+}
+
+/* Specifically target notebook structure */
+.notebook-content main,
+.notebook-content #notebook,
+.notebook-content #notebook-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Allow code blocks to scroll horizontally if needed */
+.notebook-content pre,
+.notebook-content code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Ensure images don't break layout */
+.notebook-content img,
+.notebook-content svg {
+    max-width: 100% !important;
+    height: auto !important;
 }
 </style>
 

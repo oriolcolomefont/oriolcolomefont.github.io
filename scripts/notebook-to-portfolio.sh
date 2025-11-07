@@ -35,6 +35,29 @@ if [ ! -f "$OUTPUT_HTML" ]; then
     exit 1
 fi
 
+# Extract only body content (remove DOCTYPE, html, head, body tags)
+echo "Extracting body content..."
+python3 << 'PYTHON_SCRIPT'
+import re
+import sys
+
+html_file = sys.argv[1]
+with open(html_file, 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Extract body content
+body_match = re.search(r'<body[^>]*>(.*)</body>', content, re.DOTALL)
+if body_match:
+    body_content = body_match.group(1)
+    # Write just the body content back
+    with open(html_file, 'w', encoding='utf-8') as out:
+        out.write(body_content)
+    print(f"✅ Extracted body content from {html_file}")
+else:
+    print(f"⚠️  Warning: Could not find body tag in {html_file}, using full content")
+PYTHON_SCRIPT
+"$OUTPUT_HTML"
+
 # Create markdown wrapper with frontmatter
 cat > "$OUTPUT_MD" << EOF
 ---
