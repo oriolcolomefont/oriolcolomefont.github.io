@@ -329,7 +329,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Website**: [oriolcolomefont.github.io](https://oriolcolomefont.github.io)
 - **Email**: oriolcolomefont@gmail.com
 - **GitHub**: [@oriolcolomefont](https://github.com/oriolcolomefont)
-- **LinkedIn**: [in/oriolcolomefont](https://linkedin.com/in/oriolcolomefont)
+- **LinkedIn**: [in/ocf](https://linkedin.com/in/ocf)
 
 ---
 
