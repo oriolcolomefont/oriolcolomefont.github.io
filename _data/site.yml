@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=site.schema.json
+# Site-wide constants and reusable data
+# Centralized configuration for consistent information across the site
+
+# Location Information
+location:
+  # Full location description (for contact/about sections)
+  full: "Based in Barcelona, available worldwide"
+  # Short location (for compact displays)
+  short: "Terrassa, Barcelona"
+  # Country
+  country: "Spain"
+  # City
+  city: "Barcelona"
+  # Region/Area
+  region: "Terrassa"
+
+# Contact Information
+contact:
+  email: "oriolcolomefont@gmail.com"
+  phone: "+34 648 775 980"
+  phone_display: "+34 648 775 980"
+  phone_link: "tel:+34648775980"
+
+# Social Media Links
+social:
+  github:
+    username: "oriolcolomefont"
+    url: "https://github.com/oriolcolomefont"
+    display: "@oriolcolomefont"
+  
+  linkedin:
+    username: "ocf"
+    url: "https://linkedin.com/in/ocf"
+    display: "in/ocf"
+  
+  # Add more social platforms as needed
+  # twitter:
+  #   username: "username"
+  #   url: "https://twitter.com/username"
+  #   display: "@username"
+
+# Site Repository
+repository:
+  url: "https://github.com/oriolcolomefont/oriolcolomefont.github.io"
+  display: "View Source"
+
+# Author Information (can reference from _config.yml or define here)
+author:
+  name: "Oriol Colomé Font"
+  bio_short: "Music tech generalist bridging artistry, technology, and strategy in music"
+  bio_long: "Music tech generalist with over a decade of experience across the music industry and its wiggly-air-multi-modal-cognitive-phenomenon we call MUSIC. I thrive at the intersection of artistry, technology, and strategy."
+

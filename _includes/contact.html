@@ -31,7 +31,7 @@
                         </div>
                         <div class="ml-4">
                             <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Location</p>
-                            <p class="text-gray-900 dark:text-white"> Based in Barcelona, available worldwide</p>
+                            <p class="text-gray-900 dark:text-white">{{ site.data.site.location.full }}</p>
                         </div>
                     </div>
                     
@@ -44,7 +44,7 @@
                         </div>
                         <div class="ml-4">
                             <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Phone</p>
-                            <a href="tel:+34648775980" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">+34 648 775 980</a>
+                            <a href="{{ site.data.site.contact.phone_link }}" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{{ site.data.site.contact.phone_display }}</a>
                         </div>
                     </div>
                     
@@ -57,7 +57,7 @@
                         </div>
                         <div class="ml-4">
                             <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</p>
-                            <a href="mailto:oriolcolomefont@gmail.com" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">oriolcolomefont@gmail.com</a>
+                            <a href="mailto:{{ site.data.site.contact.email }}" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{{ site.data.site.contact.email }}</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="pt-8">
                     <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect with me</h4>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/oriolcolomefont" target="_blank" rel="noopener noreferrer"
+                        <a href="{{ site.data.site.social.github.url }}" target="_blank" rel="noopener noreferrer"
                            class="p-3 bg-gray-900 dark:bg-gray-800 text-white rounded-xl hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors hover-lift"
                            aria-label="GitHub Profile">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@
                             </svg>
                         </a>
                         
-                        <a href="https://linkedin.com/in/ocf" target="_blank" rel="noopener noreferrer"
+                        <a href="{{ site.data.site.social.linkedin.url }}" target="_blank" rel="noopener noreferrer"
                            class="p-3 bg-info-600 text-white rounded-xl hover:bg-info-700 transition-colors hover-lift"
                            aria-label="LinkedIn Profile">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,11 @@
+---
+extends: default
+
+rules:
+  # Allow any structure in _data files (Jekyll data files use hash/object structure)
+  document-start: disable
+  line-length: disable
+  
+ignore: |
+  _data/site.yml
+
