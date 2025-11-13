@@ -4,13 +4,14 @@ title: "Research Notebooks"
 description: "Interactive Jupyter notebooks showcasing research in Music Information Retrieval, Deep Learning, and Audio Processing. Explore computational musicology, pattern recognition, and music technology experiments with executable code and detailed analyses."
 permalink: /notebooks/
 keywords: "jupyter notebooks, music information retrieval, MIR, deep learning, audio processing, computational musicology, music technology, research notebooks, interactive analysis"
+image: "/assets/images/profile.jpeg"
 ---
 
 <section class="py-20 bg-gradient-to-br from-primary-900 via-primary-700 to-primary-600 text-white relative overflow-hidden" aria-labelledby="notebooks-heading">
     <div class="absolute inset-0 bg-gradient-to-r from-primary-600/10 to-purple-600/10" aria-hidden="true"></div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 id="notebooks-heading" class="text-5xl md:text-6xl font-bold mb-6">Research Notebooks</h1>
-        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+        <h1 id="notebooks-heading" class="text-5xl md:text-6xl font-bold mb-6" style="color: #ffffff;">Research Notebooks</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: #f3f4f6;">
             Interactive Jupyter notebooks exploring music technology, MIR, and deep learning
         </p>
     </div>
@@ -112,23 +113,60 @@ keywords: "jupyter notebooks, music information retrieval, MIR, deep learning, a
 
 <!-- Info Section -->
 {% assign bg = site.data.theme.sections.backgrounds.white %}
-<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}">
+<section class="{{ site.data.theme.spacing.section_vertical_small }} {{ bg.light }} {{ bg.dark }} {{ site.data.theme.classes.theme_transition }}" aria-labelledby="about-notebooks-heading">
     <div class="{{ site.data.theme.classes.section_container_narrow }}">
         <div class="bg-primary-50 border-l-4 border-primary-600 p-6 rounded-r-xl">
-            <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+            <h2 id="about-notebooks-heading" class="text-xl font-bold text-gray-900 mb-3 flex items-center">
                 <svg class="w-6 h-6 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 About These Notebooks
             </h2>
-            <p class="text-gray-700 mb-3">
-                These Jupyter notebooks showcase my research and experiments in music technology, providing detailed walkthroughs of algorithms, analyses, and implementations.
-            </p>
-            <p class="text-gray-700">
-                All code is executable and reproducible. For interactive versions or to run the code yourself, visit the 
-                <a href="https://github.com/oriolcolomefont" class="text-primary-600 hover:text-primary-700 font-medium underline" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
-            </p>
+            <div class="prose prose-sm max-w-none">
+                <p class="text-gray-700 mb-3">
+                    These Jupyter notebooks showcase my research and experiments in music technology, providing detailed walkthroughs of algorithms, analyses, and implementations. Each notebook includes executable code, visualizations, and comprehensive documentation.
+                </p>
+                <p class="text-gray-700 mb-3">
+                    Topics covered include Music Information Retrieval (MIR), computational musicology, pattern recognition in musical scores, audio feature extraction, and deep learning applications in music technology.
+                </p>
+                <p class="text-gray-700 mb-3">
+                    The notebooks are designed to be educational resources for researchers, students, and practitioners interested in computational approaches to music analysis. They demonstrate practical applications of machine learning, signal processing, and music theory.
+                </p>
+                <p class="text-gray-700">
+                    All code is executable and reproducible. For interactive versions or to run the code yourself, visit the 
+                    <a href="https://github.com/oriolcolomefont" class="text-primary-600 hover:text-primary-700 font-medium underline" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub repository (opens in new tab)">GitHub repository</a>.
+                </p>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Research Notebooks",
+  "description": "Interactive Jupyter notebooks showcasing research in Music Information Retrieval, Deep Learning, and Audio Processing",
+  "url": "{{ site.url }}/notebooks/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ site.notebooks.size | default: 0 }},
+    "itemListElement": [
+      {% for notebook in site.notebooks limit: 10 %}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "item": {
+          "@type": "Article",
+          "name": "{{ notebook.title }}",
+          "description": "{{ notebook.description }}",
+          "url": "{{ site.url }}{{ notebook.url }}"
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
 
