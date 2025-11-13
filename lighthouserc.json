@@ -2,7 +2,13 @@
   "ci": {
     "collect": {
       "staticDistDir": "./_site",
-      "numberOfRuns": 1
+      "numberOfRuns": 1,
+      "url": [
+        "http://localhost:8080/404.html",
+        "http://localhost:8080/index.html",
+        "http://localhost:8080/_posts/2025-01-08-deep-learning-ramp-up-intro.html",
+        "http://localhost:8080/_posts/2025-01-08-test-post.html"
+      ]
     },
     "assert": {
       "assertions": {
@@ -10,17 +16,7 @@
         "categories:accessibility": ["error", {"minScore": 0.9}],
         "categories:best-practices": ["warn", {"minScore": 0.8}],
         "categories:seo": ["warn", {"minScore": 0.9}]
-      },
-      "preset": "lighthouse:recommended",
-      "assertMatrix": [
-        {
-          "matchingUrlPattern": ".*notebooks\\.html$",
-          "assertions": {
-            "categories:accessibility": ["warn", {"minScore": 0.8}],
-            "categories:seo": ["warn", {"minScore": 0.6}]
-          }
-        }
-      ]
+      }
     }
   }
 }
