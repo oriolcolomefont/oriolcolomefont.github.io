@@ -1,0 +1,108 @@
+name: Site Quality Checks
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build & Validate
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install npm dependencies
+        run: npm ci
+      
+      - name: Build Tailwind CSS (production)
+        run: NODE_ENV=production npx tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --minify
+      
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --trace
+      
+      - name: Check CSS file size
+        run: |
+          CSS_SIZE=$(stat -c%s assets/css/styles.css 2>/dev/null || stat -f%z assets/css/styles.css)
+          CSS_SIZE_KB=$((CSS_SIZE / 1024))
+          echo "CSS file size: ${CSS_SIZE_KB}KB"
+          if [ $CSS_SIZE_KB -gt 150 ]; then
+            echo "⚠️  Warning: CSS file is larger than 150KB (${CSS_SIZE_KB}KB). Consider optimizing."
+          else
+            echo "✅ CSS file size is acceptable (${CSS_SIZE_KB}KB)"
+          fi
+      
+      - name: Check for broken links
+        run: |
+          gem install html-proofer
+          htmlproofer ./_site \
+            --check-html \
+            --disable-external \
+            --allow-hash-href \
+            --empty-alt-ignore \
+            --only-4xx || true
+        continue-on-error: true
+      
+      - name: Check for duplicate permallinks
+        run: ./scripts/check-duplicate-permallinks.sh
+      
+      - name: Check for duplicate titles
+        run: ./scripts/check-duplicate-titles.sh
+      
+      - name: Check for orphaned images
+        run: ./scripts/find-orphan-images.sh || true
+        continue-on-error: true
+
+  css-size-check:
+    name: CSS Size Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install npm dependencies
+        run: npm ci
+      
+      - name: Build Tailwind CSS (production)
+        run: NODE_ENV=production npx tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --minify
+      
+      - name: Check CSS size threshold
+        run: |
+          CSS_SIZE=$(stat -c%s assets/css/styles.css 2>/dev/null || stat -f%z assets/css/styles.css)
+          CSS_SIZE_KB=$((CSS_SIZE / 1024))
+          MAX_SIZE_KB=200
+          
+          echo "CSS file size: ${CSS_SIZE_KB}KB"
+          echo "Maximum allowed: ${MAX_SIZE_KB}KB"
+          
+          if [ $CSS_SIZE_KB -gt $MAX_SIZE_KB ]; then
+            echo "❌ ERROR: CSS file exceeds maximum size (${CSS_SIZE_KB}KB > ${MAX_SIZE_KB}KB)"
+            echo "Please review Tailwind content paths and purge unused styles."
+            exit 1
+          else
+            echo "✅ CSS file size is within limits"
+          fi
+
