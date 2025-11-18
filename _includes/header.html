@@ -233,14 +233,8 @@
   const themeToggle = document.getElementById('theme-toggle');
   const html = document.documentElement;
   
-  // Initialize theme from localStorage or system preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-  
-  if (initialTheme === 'dark') {
-    html.classList.add('dark');
-  }
+  // Theme already initialized in head to prevent flash
+  // Only handle toggle and system preference changes here
   
   themeToggle?.addEventListener('click', () => {
     const isDark = html.classList.contains('dark');
@@ -266,66 +260,68 @@
   });
 })();
 
-// Header scroll behavior
+// Header scroll behavior - throttled for performance
 (function() {
   const header = document.getElementById('main-header');
-  let lastScroll = 0;
+  if (!header) return;
   
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-      header.classList.add('shadow-md');
-    } else {
-      header.classList.remove('shadow-md');
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScroll = window.pageYOffset;
+        header.classList.toggle('shadow-md', currentScroll > 100);
+        ticking = false;
+      });
+      ticking = true;
     }
-    
-    lastScroll = currentScroll;
   });
 })();
 
-// Parallax scroll effect
-document.addEventListener('DOMContentLoaded', () => {
-  const parallaxElements = document.querySelectorAll('[data-parallax]');
-  
-  // Respect reduced motion preferences
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  if (!prefersReducedMotion) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      
-      parallaxElements.forEach(el => {
-        const speed = el.dataset.parallax || 0.5;
-        const yPos = -(scrolled * speed);
-        el.style.transform = `translate3d(0, ${yPos}px, 0)`;
-      });
-    });
-  }
-});
-
-// Scroll reveal with depth
+// Parallax scroll effect and scroll reveal - consolidated
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
   if (!prefersReducedMotion) {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
+    // Parallax scroll effect
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    if (parallaxElements.length > 0) {
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            parallaxElements.forEach(el => {
+              const speed = parseFloat(el.dataset.parallax) || 0.5;
+              const yPos = -(scrolled * speed);
+              el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+            });
+            ticking = false;
+          });
+          ticking = true;
         }
       });
-    }, observerOptions);
+    }
+    
+    // Scroll reveal with IntersectionObserver
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    if (revealElements.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
 
-    document.querySelectorAll('[data-reveal]').forEach(el => {
-      el.classList.add('reveal-hidden');
-      observer.observe(el);
-    });
+      revealElements.forEach(el => {
+        el.classList.add('reveal-hidden');
+        observer.observe(el);
+      });
+    }
   }
 });
 </script>
