@@ -616,12 +616,20 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Better focus-visible styles */
+/* Better focus-visible styles - more prominent for accessibility */
 
 *:focus-visible {
   outline: 2px solid rgb(99 102 241);
-  outline-offset: 2px;
+  outline-offset: 4px;
   border-radius: 0.25rem;
+}
+
+/* Ensure buttons and links have visible focus states */
+
+a:focus-visible,
+  button:focus-visible {
+  outline: 2px solid rgb(99 102 241);
+  outline-offset: 4px;
 }
 
 .container {
@@ -2416,10 +2424,6 @@ body {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -3170,6 +3174,11 @@ body {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pl-12 {
@@ -4137,6 +4146,10 @@ html {
   top: 1rem;
 }
 
+.focus\:z-50:focus {
+  z-index: 50;
+}
+
 .focus\:underline:focus {
   text-decoration-line: underline;
 }
@@ -4256,6 +4269,11 @@ html {
   border-color: rgb(31 41 55 / 0.5);
 }
 
+.dark\:border-primary-400:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(129 140 248 / var(--tw-border-opacity, 1));
+}
+
 .dark\:border-primary-500:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(99 102 241 / var(--tw-border-opacity, 1));
@@ -4283,6 +4301,10 @@ html {
 .dark\:bg-gray-800:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:bg-gray-900\/50:is(.dark *) {
+  background-color: rgb(17 24 39 / 0.5);
 }
 
 .dark\:bg-indigo-900:is(.dark *) {

@@ -17,39 +17,38 @@
             <div class="text-center lg:text-left space-y-8">
                 <div class="space-y-4">
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight" style="text-shadow: 0 2px 8px rgb(0 0 0 / 0.15), 0 1px 4px rgb(0 0 0 / 0.1);">
-                        Oriol Colomé
+                        Building products artists want to use
                     </h1>
                     <p class="text-2xl sm:text-3xl lg:text-4xl font-light text-white/90" style="text-shadow: 0 1px 4px rgb(0 0 0 / 0.1);">
-                        Music-tech generalist
+                        MIR Researcher
                     </p>
                 </div>
                 
                 <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    Over a decade of experience bridging creativity, technology, and strategy in music. 
+                    I help music companies ship products faster by connecting technical teams with artistic vision. 
                     Currently leading innovation at My Sheet Music Transcriptions.
                 </p>
                 
                 <!-- CTAs -->
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="#contact" 
-                       class="btn btn-primary press-effect hover:shadow-primary-glow transition-all duration-300">
-                        Get in Touch
+                       aria-label="Get in touch with Oriol"
+                       class="btn btn-primary press-effect hover:shadow-primary-glow transition-all duration-300 text-base px-8 py-4">
+                        Start a Conversation
                     </a>
                     
-                    <a href="#projects" 
-                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect focus-visible:ring-white/50 hover:shadow-elevation-2 transition-all duration-300">
-                        View Projects
-                    </a>
-                    
-                    <a href="{{ '/assets/documents/oriol_colome_cv.pdf' | relative_url }}" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect inline-flex gap-2 focus-visible:ring-white/50 hover:shadow-elevation-2 transition-all duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                        Download CV
-                    </a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="{{ '/assets/documents/oriol_colome_cv.pdf' | relative_url }}" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Download Oriol's CV"
+                           class="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30 backdrop-blur-sm press-effect inline-flex items-center justify-center gap-2 focus-visible:ring-white/50 hover:shadow-elevation-2 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Download CV
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -65,7 +64,7 @@
                     
                     <!-- Profile Image -->
                     <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" 
-                         alt="Oriol Colomé - Music tech generalist"
+                         alt="Oriol Colomé - Growth Lead & Product Owner at My Sheet Music Transcriptions"
                          width="400" 
                          height="400" 
                          loading="eager" 
@@ -77,10 +76,10 @@
     </div>
     
     <!-- Subtle scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block" aria-hidden="true">
         <div class="flex flex-col items-center space-y-2 text-white/40 hover:text-white/60 transition-colors cursor-pointer">
             <span class="text-xs uppercase tracking-wider font-medium">Scroll</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>

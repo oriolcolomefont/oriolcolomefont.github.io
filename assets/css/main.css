@@ -65,11 +65,18 @@
     text-rendering: optimizeLegibility;
   }
   
-  /* Better focus-visible styles */
+  /* Better focus-visible styles - more prominent for accessibility */
   *:focus-visible {
     outline: 2px solid rgb(99 102 241);
-    outline-offset: 2px;
+    outline-offset: 4px;
     border-radius: 0.25rem;
+  }
+  
+  /* Ensure buttons and links have visible focus states */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgb(99 102 241);
+    outline-offset: 4px;
   }
 }
 

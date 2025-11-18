@@ -17,8 +17,8 @@
         <li><a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Portfolio</a></li>
         <li class="relative group">
           <button class="nav-link flex items-center gap-1" id="coding-diary-dropdown-button" aria-expanded="false" aria-haspopup="true" aria-describedby="coding-diary-tooltip">
-            Coding diary
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Resources
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
@@ -115,8 +115,8 @@
             <li><a href="{{ '/portfolio/' | relative_url }}" class="mobile-nav-link">Portfolio</a></li>
             <li>
               <button id="mobile-dl-diary-button" class="mobile-nav-link w-full text-left flex items-center justify-between" aria-expanded="false">
-                <span>Coding diary</span>
-                <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span>Resources</span>
+                <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
@@ -133,7 +133,7 @@
   </div>
   
   <!-- Skip to content link -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white dark:bg-surface-900 text-gray-900 dark:text-white px-4 py-2 rounded-xl shadow-lg z-50">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 bg-white dark:bg-surface-900 text-gray-900 dark:text-white px-4 py-2 rounded-xl shadow-lg border-2 border-primary-600 dark:border-primary-400">
     Skip to content
   </a>
 </header>

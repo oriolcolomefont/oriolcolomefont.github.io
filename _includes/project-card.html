@@ -80,6 +80,7 @@
           <a href="{{ link.url }}" 
              target="_blank" 
              rel="noopener noreferrer"
+             aria-label="{{ link.label }} - {{ include.title }}"
              class="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-all hover:shadow-md press-effect">
             {% if link.label == "GitHub" %}
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
