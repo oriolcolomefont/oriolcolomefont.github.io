@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tech elites and music creativity: protecting human culture in the age of so called \"AI\""
+title: "Tech elites and music creativity: protecting human culture in the so called \"age of AI\""
 date: 2025-11-06
 categories: ["Music Technology", "Industry Insights"]
 tags: ["music industry", "technology", "creativity", "innovation", "culture", "AI", "artificial intelligence"]
