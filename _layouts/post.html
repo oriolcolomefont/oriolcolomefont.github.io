@@ -23,9 +23,16 @@ layout: default
             {% endif %}
             
             <!-- Title -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6 leading-tight">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4 leading-tight">
                 {{ page.title }}
             </h1>
+            
+            <!-- Subtitle -->
+            {% if page.subtitle %}
+            <p class="text-xl md:text-2xl text-white/90 text-center mb-6 font-light italic max-w-3xl mx-auto">
+                {{ page.subtitle }}
+            </p>
+            {% endif %}
             
             <!-- Meta Info -->
             <div class="flex flex-wrap justify-center items-center gap-4 text-white/80 text-sm">
